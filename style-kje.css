@@ -177,6 +177,7 @@ details summary {
     margin-block: 0;
 }
 .navigation-item{
+    position: relative;
     padding: 18px 15px;
     padding: 0;
     display: flex;
@@ -197,6 +198,92 @@ details summary {
     height: 16px;
     display: block;
     fill: white;
+}
+.nav-dropdown-menu, .nav-deepdropdown-menu{
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+    pointer-events: none; 
+}
+.nav-deepdropdown-menu{
+    position: absolute;
+    top: 0;
+    right: 100%;         
+    margin-right: 5px;
+
+    width: 200px;
+    background-color: white;
+    border-radius: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+    pointer-events: none;
+}
+.nav-dropdown-menu li, .nav-deepdropdown-menu li{
+    padding: 0;
+    display: flex;
+}
+.nav-dropdown-menu li a, .nav-deepdropdown-menu li a{
+    color: #444444;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-flex;
+    text-align: left;
+    width: 100%;
+    font-size: 1rem;
+}
+.nav-dropdown-menu li a svg{
+    margin-left: auto;
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+.nav-dropdown-menu li a:hover, .nav-deepdropdown-menu li a:hover{
+    color: #47b2e4;
+}
+.navigation-item:nth-child(8):hover > .nav-dropdown-menu, .navigation-item:nth-child(8) > .nav-dropdown-menu:hover {
+    display: block; 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.nav-dropdown-menu-item.has-submenu:hover > .nav-deepdropdown-menu,
+.nav-dropdown-menu-item.has-submenu > .nav-deepdropdown-menu:hover {
+    display: block; 
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);   
+    pointer-events: auto;
+    top: 0; 
+    right: 100%;
+    margin-right: 3px;
+    left: auto;
+}
+
+.nav-deepdropdown-menu svg {
+    margin-left: auto; 
+    transform: rotate(0deg);
 }
 .navigation-item:hover{
     color: #47b2e4;
