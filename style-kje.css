@@ -122,6 +122,7 @@ details summary {
 }
 
 /*scroll-animation 적용 안됨 - scroll에 따른 .header-lower 부분 배경 색상*/
+/*
 @scroll-timeline headerScroll { 
     source: selector(.non-header);
     orientation: block;
@@ -150,7 +151,7 @@ details summary {
     to{
         background-color: rgba(40, 58, 90, 0.9);
     }
-}
+}*/
 
 .header-lower-inner {
     position: sticky;
@@ -434,30 +435,30 @@ details summary {
 }
 
 @keyframes scrollPause {
-  0%       { transform: translateX(0); }
-  3.125%   { transform: translateX(-250px); }
-  12.5%    { transform: translateX(-250px); }
+  0%      { transform: translateX(0); }
+  0.5%    { transform: translateX(-250px); }
+  12.5%   { transform: translateX(-250px); }
 
-  15.625%  { transform: translateX(-500px); }
-  25%      { transform: translateX(-500px); }
+  13%     { transform: translateX(-500px); }
+  25%     { transform: translateX(-500px); }
 
-  28.125%  { transform: translateX(-750px); }
-  37.5%    { transform: translateX(-750px); }
+  25.5%   { transform: translateX(-750px); }
+  37.5%   { transform: translateX(-750px); }
 
-  40.625%  { transform: translateX(-1000px); }
-  50%      { transform: translateX(-1000px); }
+  38%     { transform: translateX(-1000px); }
+  50%     { transform: translateX(-1000px); }
 
-  53.125%  { transform: translateX(-1250px); }
-  62.5%    { transform: translateX(-1250px); }
+  50.5%   { transform: translateX(-1250px); }
+  62.5%   { transform: translateX(-1250px); }
 
-  65.625%  { transform: translateX(-1500px); }
-  75%      { transform: translateX(-1500px); }
+  63%     { transform: translateX(-1500px); }
+  75%     { transform: translateX(-1500px); }
 
-  78.125%  { transform: translateX(-1750px); }
-  87.5%    { transform: translateX(-1750px); }
+  75.5%   { transform: translateX(-1750px); }
+  87.5%   { transform: translateX(-1750px); }
 
-  90.625%  { transform: translateX(-2000px); }
-  100%     { transform: translateX(-2000px); }
+  88%     { transform: translateX(-2000px); }
+  100%    { transform: translateX(-2000px); }
 }
 
 /*about us 부분*/
