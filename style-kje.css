@@ -18,7 +18,9 @@ details summary {
     width: auto;
     justify-content: flex-start;
     display: flex;
-    flex-direction: row
+    align-items: center;
+    flex-direction: row;
+    gap: 3px;
 }
 .header-logo, .header-device {
     display: flex;
@@ -30,54 +32,108 @@ details summary {
 .header-logo > img {
     height: 25px;
 }
+.header-device{
+    gap: 11px;
+}
+.header-device-icon svg{
+    width: 18px;
+    height: 18px;
+}
 .header-middle{
+    position: absolute;
+    left: 50%;
+    align-items: center;
     width: auto;
     justify-content: center;
     display: flex;
     flex-direction: row
 }
+.left-arrow, .right-arrow{
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+}
 .left-arrow, .right-arrow, .header-middle-text{
     display: flex;
     align-items: center;
+    color: white;
 }
 .header-right{
     width: auto;
     justify-content: flex-end;
     display: flex;
-    flex-direction: row
+    flex-direction: row;
 }
 .extend-icon, .header-download{
     display: flex;
     align-items: center;
 }
+.extend-icon svg{
+    width: 18px;
+    height: 18px;
+}
 .header-download{
     height: 32px;
     width: auto;
     background-color: #00a6eb;
+    padding: 0 12px;
+    margin-left: 15px;
+}
+.header-download svg{
+    width: 18px;
+    height: 18px;
 }
 .header-download > div{
     margin: 5px;
+    font-size: 13px;
 }
 
 .header-lower{
     position: fixed;
-    padding: 15px 0;
+    padding: 15px 60px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     top: 32px;
     color: #FFFFFF;
 }
+.header-lower a{
+    text-decoration: none;
+    color: inherit;
+}
 .nav{
     display: flex;
+    gap: 12px;
+    align-self: center;
+    flex: 0 0 auto;
+    margin-left: auto;
 }
 .navigation-item{
     padding: 18px 15px;
 }
+.navigation-item a{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+    line-height: 1;
+}
+.navigation-item a svg {
+    width: 12px;
+    height: 12px;
+    display: block;
+    fill: white;
+}
 .navigation-item:nth-child(8){
     display: flex;
 }
-.navigation-item:last-child > button{
+.navigation-item:last-child button{
     background-color: #47b2e4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    color: white;
 }
 
 .banner{
