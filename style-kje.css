@@ -438,7 +438,7 @@ details summary {
     gap: 7px;
     font-size: 15px;
     font-weight: 500;
-    transition: transform 200s ease-out;
+    transition: transform 200s linear;
 }
 #about-us-content-right button:hover{
     background-color: #47b2e4;
@@ -446,7 +446,7 @@ details summary {
     cursor: pointer;
 }
 #about-us-content-right button:hover svg{
-    transform: translateX(5px);
+    transform: translateX(7px);
 }
 
 .eum-ipsam{
