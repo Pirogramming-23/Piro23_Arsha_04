@@ -1,3 +1,7 @@
+details summary {
+  list-style: none;
+}
+
 .header-upper{
     position: fixed;
     left: 0;
@@ -17,8 +21,11 @@
     flex-direction: row
 }
 .header-logo, .header-device {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+}
+.header-logo{
+    margin-left: 10px;
 }
 .header-logo > img {
     height: 25px;
@@ -44,7 +51,164 @@
     align-items: center;
 }
 .header-download{
+    height: 32px;
+    width: auto;
+    background-color: #00a6eb;
+}
+.header-download > div{
+    margin: 5px;
+}
+
+.header-lower{
+    position: fixed;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    top: 32px;
+    color: #FFFFFF;
+}
+.nav{
+    display: flex;
+}
+.navigation-item{
+    padding: 18px 15px;
+}
+.navigation-item:nth-child(8){
+    display: flex;
+}
+.navigation-item:last-child > button{
+    background-color: #47b2e4;
+}
+
+.banner{
+    background-color: #37517e;
+    padding: 120px 0 60px;
+    display: flex;
+    justify-content: center;
+}
+.banner-grid{
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+.banner-left{
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+.banner-text-upper{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.banner-text-lower{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffffb3;
+}
+.banner-nontext{
+    display: flex;
+}
+.banner-right img{
+    width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.slider{
+    box-sizing: border-box;
+    width: 100%;
+    height: 5vw;
+    overflow: hidden;
+    background-color: #f5f6f8;
+    /*padding: 12px 130px;*/
+}
+.slider-img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 140px;
+  padding: 0 60px;
+  animation: scroll 32s steps(16) infinite;
+  margin: 0 80px;
+}
+
+.slider-img img {
     height: 100%;
     width: auto;
-    border-left-color: #00a6eb;
+    max-width: 100px;
+    margin: 0;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-3850px); }
+}
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    background-color: #fff;
+}
+.about-us-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.about-us-contents{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+}
+.about-us-content{
+    flex: 1;
+    min-height: 100px;
+    background-color: #eee;
+}
+
+.eum-ipsam{
+    display: flex;
+    background-color: #f5f6f8;
+    justify-content: center;
+    min-height: 510px;
+}
+.eum-contents{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    max-width: 1400px;
+    padding: 25px;
+}
+.eum-content{
+    padding: 0 12px;
+}
+.eum-non-img{
+    flex: 1;
+    min-width: 300px;
+}
+.eum-img{
+    flex: 0.7;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    min-width: 300px;
+}
+.eum-img img{
+    width: 80%;
+    height: auto;
+    object-fit: contain;
 }
