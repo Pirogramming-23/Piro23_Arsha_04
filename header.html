@@ -3,14 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style-kje.css">
+    <title>Document-kje</title>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <div class="header-upper">
-            <div class="header-logo"></div>
+            <div class="header-left">
+                <div class="header-logo"></div>
+                <ul class="header-device">
+                    <li id="monitor-icon" class="header-device-icon">
+                        <a href="#"><svg class="icon icon-preview" fill="currentColor"><use xlink:href="https://bootstrapmade.com/assets/img/icons.svg#preview"></use></svg></a>
+                    </li>
+                    <li id="tablet-icon" class="header-device-icon">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="rgba(255, 255, 255, .5)" class="bi bi-tablet" viewBox="0 0 16 16"><path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/</svg></a>
+                    </li>
+                    <li id="phine-icon" class="header-device-icon">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="rgba(255, 255, 255, .5)" class="bi bi-phone" viewBox="0 0 16 16"><path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></svg></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-middle">
+                <div class="left-arrow">
+                    <svg class="icon icon-chevron-left" fill="currentColor"><use xlink:href="https://bootstrapmade.com/assets/img/icons.svg#chevron-left"></use></svg>
+                </div>
+                <div class="header-middle-text"><a id="#">Arsha</a></div>
+                <div class="right-arrow">
+                    <svg class="icon icon-chevron-right" fill="currentColor"><use xlink:href="https://bootstrapmade.com/assets/img/icons.svg#chevron-right"></use></svg>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="extend-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgba(255, 255, 255, .5)" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg>
+                </div>
+                <div class="header-download">
+                    <div class="download-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/></svg>
+                    </div>
+                    <div>DOWNLOAD</div>
+                </div>
+            </div>
         </div>
-        <div class="header-lower"></div>
-    </div>
+        <div class="header-lower">
+            <div class="header-name"><a href="#">ARSHA</a></div>
+            <ul class="nav">
+                <li class="navigation-item"><a href="#">Home</a></li>
+                <li class="navigation-item"><a href="#">About</a></li>
+                <li class="navigation-item"><a href="#">Services</a></li>
+                <li class="navigation-item"><a href="#">portfolio</a></li>
+                <li class="navigation-item"><a href="#">Team</a></li>
+                <li class="navigation-item"><a href="#">Pricing</a></li>
+                <li class="navigation-item"><a href="#">Blog</a></li>
+                <li class="navigation-item"><a href="#">Dropdown</a></li>
+                <li class="navigation-item"><a href="#">contact</a></li>
+                <li class="navigation-item"><a href="#"><button>Get Started</button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></a></li>
+            </ul>
+        </div>
+    </header>
 </body>
 </html>

@@ -1,0 +1,50 @@
+.header-upper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 32px;
+    background: #023b6d;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+}
+.header-left{
+    width: auto;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row
+}
+.header-logo, .header-device {
+  display: flex;
+  align-items: center;
+}
+.header-logo > img {
+    height: 25px;
+}
+.header-middle{
+    width: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: row
+}
+.left-arrow, .right-arrow, .header-middle-text{
+    display: flex;
+    align-items: center;
+}
+.header-right{
+    width: auto;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row
+}
+.extend-icon, .header-download{
+    display: flex;
+    align-items: center;
+}
+.header-download{
+    height: 100%;
+    width: auto;
+    border-left-color: #00a6eb;
+}
