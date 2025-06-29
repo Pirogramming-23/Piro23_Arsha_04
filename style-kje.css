@@ -1,7 +1,16 @@
 details summary {
   list-style: none;
 }
-
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.non-header{
+    overflow-y: scroll;
+}
 .header-upper{
     position: fixed;
     left: 0;
@@ -13,6 +22,7 @@ details summary {
     align-items: center;
     color: white;
     justify-content: space-between;
+    z-index: 1000;
 }
 .header-left{
     width: auto;
@@ -88,29 +98,68 @@ details summary {
     font-size: 13px;
 }
 
-.header-lower{
-    position: fixed;
-    padding: 15px 60px;
+
+@scroll-timeline headerScroll { /*scroll-animation 적용 안됨*/
+    source: selector(.non-header);
+    orientation: block;
+    scroll-offsets: 500px, 600px;
+}
+.header-lower {
+    position: sticky;
+    top: 32px;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    background-color: rgba(40, 58, 90, 0);
+    transition: background-color 0.3s ease;
+    z-index: 999;
+    padding-top: 17px;
+    animation-name: scroll-bg-change;
+    animation-duration: auto;
+    animation-timing-function: ease;
+    animation-timeline: headerScroll;
+    animation-fill-mode: both;
+}
+@keyframes scroll-bg-change{
+    from{
+        background-color: rgba(40, 58, 90, 0);
+    }
+    to{
+        background-color: rgba(40, 58, 90, 0.9);
+    }
+}
+
+.header-lower-inner {
+    position: sticky;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 4vw;
     display: flex;
-    flex-direction: row;
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-    top: 32px;
-    color: #FFFFFF;
 }
 .header-lower a{
     text-decoration: none;
     color: inherit;
 }
+.header-name{
+    flex: 0 0 auto;
+    font-size: 30px;
+    font-weight: bold;
+}
 .nav{
     display: flex;
-    gap: 12px;
+    gap: 5px;
     align-self: center;
-    flex: 0 0 auto;
     margin-left: auto;
+    padding: 0;
+    margin-block: 0;
 }
 .navigation-item{
     padding: 18px 15px;
+    padding: 0;
+    display: flex;
 }
 .navigation-item a{
     display: inline-flex;
@@ -118,6 +167,9 @@ details summary {
     gap: 4px;
     color: white;
     line-height: 1;
+    vertical-align: middle;
+    padding: 18px 15px;
+    font-size: 15px;
 }
 .navigation-item a svg {
     width: 12px;
@@ -128,17 +180,23 @@ details summary {
 .navigation-item:nth-child(8){
     display: flex;
 }
+.navigation-item:last-child a{
+    display: inline-flex;
+    align-items: center;
+}
 .navigation-item:last-child button{
     background-color: #47b2e4;
     border: none;
     padding: 8px 16px;
     border-radius: 50px;
     color: white;
+    align-items: center;
+    display: center;
 }
 
 .banner{
     background-color: #37517e;
-    padding: 120px 0 60px;
+    padding: 120px 0 80px;
     display: flex;
     justify-content: center;
 }
@@ -157,14 +215,48 @@ details summary {
 .banner-text-upper{
     font-size: 3rem;
     font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
 }
 .banner-text-lower{
     font-size: 1.3rem;
     font-weight: bold;
+    line-height: 1.4;
     color: #ffffffb3;
+    margin-top: 7px;
 }
 .banner-nontext{
+    display: grid;
+    width: 300px;
+    height: 50px;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 15px;
+}
+.banner-nontext button{
+    width: 100%;
+    height: 100%;
+    background-color: #47b2e4;
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+    align-items: center;
+    display: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+.banner-video{
     display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 10px;
+    align-items: center;
+}
+.banner-video svg{
+    width: 32px;
+    height: 32px;
 }
 .banner-right img{
     width: 100%;
@@ -186,15 +278,15 @@ details summary {
     /*padding: 12px 130px;*/
 }
 .slider-img {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  box-sizing: border-box;
-  gap: 140px;
-  padding: 0 60px;
-  animation: scroll 32s steps(16) infinite;
-  margin: 0 80px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 140px;
+    padding: 0 60px;
+    animation: scroll 32s steps(16) infinite;
+    margin: 0 80px;
 }
 
 .slider-img img {
@@ -220,7 +312,32 @@ details summary {
 }
 .about-us-title{
     text-align: center;
+    margin-top: 5px;
     margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #37517e;;
+}
+.about-us-titledivline{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-us-titledivline div:first-child{
+    position: absolute;
+    width: 160px;
+    height: 1px;
+    background-color: #212529;
+}
+.about-us-titledivline div:last-child{
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: #47b2e4;
 }
 .about-us-contents{
     display: flex;
@@ -228,32 +345,116 @@ details summary {
     justify-content: center;
     width: 100%;
     max-width: 1300px;
+    color: #444444;;
+    margin-top: 50px;
 }
 .about-us-content{
     flex: 1;
     min-height: 100px;
-    background-color: #eee;
+    line-height: 23px;
+}
+.about-us-content-list{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 15px 0;
+}
+.about-us-content-listitem{
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+}
+.about-us-content-listitem svg{
+    width: 20px;
+    height: 20px;
+}
+.about-us-content-listitem div{
+    font-size: 15px;
+}
+#about-us-content-right{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+#about-us-content-right button{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #47b2e4;
+    padding: 10px;
+    border-radius: 5px;
+    color: #47b2e4;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .eum-ipsam{
     display: flex;
     background-color: #f5f6f8;
     justify-content: center;
-    min-height: 510px;
 }
 .eum-contents{
     display: flex;
     flex-direction: row;
-    gap: 80px;
+    gap: 70px;
     max-width: 1400px;
     padding: 25px;
 }
 .eum-content{
-    padding: 0 12px;
+    padding: 15px 12px;
 }
 .eum-non-img{
     flex: 1;
     min-width: 300px;
+    margin-top: 30px;
+}
+.eum-title{
+    font-size: 2rem;
+    line-height: 40px;
+    color: #37517e;
+}
+.eum-title strong{
+    font-weight: 600;
+}
+.eum-text{
+    margin: 10px 0;
+    color:  color-mix(in srgb, #444444, transparent 30%);
+    line-height: 23px;
+}
+.eum-boxlist{
+    display: grid;
+    gap: 20px;
+}
+.eum-boxitem{
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.eum-boxitem details summary{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+}
+.eum-boxitem details summary svg{
+    padding-right: 20px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.eum-boxitem details > div{
+    line-height: 23px;
+    margin: 0 12px 0 10px;
+    color: #444444;
+}
+.toggle-num{
+    color: #47b2e4;
+    font-weight: 500;
 }
 .eum-img{
     flex: 0.7;
@@ -261,10 +462,13 @@ details summary {
     align-items: center;
     justify-self: center;
     justify-content: center;
-    min-width: 300px;
+    margin: 30px;
+    flex-shrink: 0;
 }
 .eum-img img{
-    width: 80%;
-    height: auto;
+    height: 100%;
+    width: auto;
     object-fit: contain;
+    max-height: 400px;
+    display: block;
 }
