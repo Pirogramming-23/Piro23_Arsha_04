@@ -1,0 +1,261 @@
+@import "./reset.css";
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+
+.Portfolio-section {
+    
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+.Portfolio-container {
+    text-align: center;
+
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+.Portfolio-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+.Portfolio-container h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+
+.Portfolio-container h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*순수 HTML + CSS만 사용할 경우
+"버튼 누르면 필터링해서 해당 항목만 보이게" 하는 건 라디오버튼 토글 형태로만 가능해.
+(진짜 버튼 클릭 필터링은 JS 필요)*/
+
+.Portfolio-section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+.Portfolio-container {
+    text-align: center;
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Portfolio-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.Portfolio-container h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+
+.Portfolio-container h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* ===== 필터 버튼 ===== */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-buttons input {
+    display: none;
+}
+
+.filter-buttons label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons input:checked + label {
+    background: #3498db;
+    color: #fff;
+}
+
+/* ===== 이미지 그리드 ===== */
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;  /* 사진 간격 */
+    justify-content: center;  /* 가로 가운데 정렬 */
+    padding: 20px;  /* 여백 */
+}
+
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+
+/* ===== 필터링 동작 (CSS만으로 구현) ===== */
+
+/* All 선택 시 전부 보임 */
+#filter-all:checked ~ .portfolio-gallery .portfolio-item {
+    display: block;
+}
+
+/* App 선택 시 App만 보임 */
+#filter-app:checked ~ .portfolio-gallery .portfolio-item {
+    display: none;
+}
+#filter-app:checked ~ .portfolio-gallery .app {
+    display: block;
+}
+
+/* Card 선택 시 Card만 보임 */
+#filter-card:checked ~ .portfolio-gallery .portfolio-item {
+    display: none;
+}
+#filter-card:checked ~ .portfolio-gallery .card {
+    display: block;
+}
+
+/* Web 선택 시 Web만 보임 */
+#filter-web:checked ~ .portfolio-gallery .portfolio-item {
+    display: none;
+}
+#filter-web:checked ~ .portfolio-gallery .web {
+    display: block;
+}
+
+
+
+
+
+:root {
+    --background-color: #ffffff;
+    --default-color: #444444;
+    --heading-color: #37517e;
+    --accent-color: #47b2e4;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
+}
+
+:root, [data-bs-theme=light] {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-primary-text-emphasis: #052c65;
+    --bs-secondary-text-emphasis: #2b2f32;
+    --bs-success-text-emphasis: #0a3622;
+    --bs-info-text-emphasis: #055160;
+    --bs-warning-text-emphasis: #664d03;
+    --bs-danger-text-emphasis: #58151c;
+    --bs-light-text-emphasis: #495057;
+    --bs-dark-text-emphasis: #495057;
+    --bs-primary-bg-subtle: #cfe2ff;
+    --bs-secondary-bg-subtle: #e2e3e5;
+    --bs-success-bg-subtle: #d1e7dd;
+
+}
