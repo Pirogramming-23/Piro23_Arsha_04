@@ -44,10 +44,15 @@ details summary {
 }
 .header-device{
     gap: 11px;
+    margin-left: 20px;
 }
 .header-device-icon svg{
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
+    fill: rgba(255, 255, 255, 0.5);
+}
+.bi.bi-display{
+    fill: rgba(255, 255, 255, 1);
 }
 .header-middle{
     position: absolute;
@@ -68,6 +73,11 @@ details summary {
     align-items: center;
     color: white;
 }
+.header-middle svg{
+    width: 16px;
+    height: 16px;
+    fill: rgba(255, 255, 255, 0.5);
+}
 .header-right{
     width: auto;
     justify-content: flex-end;
@@ -79,8 +89,13 @@ details summary {
     align-items: center;
 }
 .extend-icon svg{
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+    fill: rgba(255, 255, 255, 0.5);
+}
+.header-middle svg:hover, .header-device-icon svg:hover, .extend-icon svg:hover, .header-middle-text:hover{
+    fill: rgba(255, 255, 255, 1);
+    cursor: pointer;
 }
 .header-download{
     height: 32px;
@@ -89,9 +104,14 @@ details summary {
     padding: 0 12px;
     margin-left: 15px;
 }
+.header-download:hover{
+    background-color: #00b4ff;
+    cursor: pointer;
+}
 .header-download svg{
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+    fill: rgba(255, 255, 255, 1);
 }
 .header-download > div{
     margin: 5px;
@@ -160,22 +180,32 @@ details summary {
     padding: 18px 15px;
     padding: 0;
     display: flex;
+    color: white;
 }
 .navigation-item a{
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    color: white;
     line-height: 1;
     vertical-align: middle;
     padding: 18px 15px;
     font-size: 15px;
+    color: inherit;
 }
 .navigation-item a svg {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     display: block;
     fill: white;
+}
+.navigation-item:hover{
+    color: #47b2e4;
+}
+.navigation-item:hover a svg{
+    fill: #47b2e4;
+}
+#navigation-item-home a{
+    color: #47b2e4;
 }
 .navigation-item:nth-child(8){
     display: flex;
@@ -192,6 +222,10 @@ details summary {
     color: white;
     align-items: center;
     display: center;
+}
+.navigation-item:last-child button:hover {
+    background-color: color-mix(in srgb, #47b2e4, transparent 10%);
+    cursor: pointer;
 }
 
 .banner{
@@ -232,14 +266,13 @@ details summary {
     margin-top: 50px;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 .banner-nontext button{
     width: 100%;
     height: 100%;
     background-color: #47b2e4;
     border: none;
-    padding: 10px;
     border-radius: 50px;
     color: white;
     align-items: center;
@@ -247,16 +280,29 @@ details summary {
     font-size: 15px;
     font-weight: 500;
 }
+.banner-nontext button:hover{
+    background-color: color-mix(in srgb, #47b2e4, transparent 10%);
+    cursor: pointer;
+}
 .banner-video{
     display: flex;
     font-size: 16px;
     font-weight: 500;
     gap: 10px;
     align-items: center;
+    color: white;
 }
 .banner-video svg{
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+.banner-video:hover{
+    color: #47b2e4;
+    cursor: pointer;
+}
+.banner-video:hover svg{
+    fill: #47b2e4;
 }
 .banner-right img{
     width: 100%;
@@ -352,6 +398,7 @@ details summary {
     flex: 1;
     min-height: 100px;
     line-height: 23px;
+    margin: 10px;
 }
 .about-us-content-list{
     display: grid;
@@ -366,6 +413,7 @@ details summary {
 .about-us-content-listitem svg{
     width: 20px;
     height: 20px;
+    fill: #47b2e4;
 }
 .about-us-content-listitem div{
     font-size: 15px;
@@ -387,9 +435,18 @@ details summary {
     color: #47b2e4;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 7px;
     font-size: 15px;
     font-weight: 500;
+    transition: transform 200s ease-out;
+}
+#about-us-content-right button:hover{
+    background-color: #47b2e4;
+    color: white;
+    cursor: pointer;
+}
+#about-us-content-right button:hover svg{
+    transform: translateX(5px);
 }
 
 .eum-ipsam{
@@ -435,26 +492,50 @@ details summary {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: relative;
 }
+.toggle-num{
+    color: #47b2e4;
+    font-weight: 500;
+}
 .eum-boxitem details summary{
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
     padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.eum-boxitem details summary div{
+    color: rgb(56, 85, 130);
+    flex: 1;
+
 }
 .eum-boxitem details summary svg{
-    padding-right: 20px;
+    right: 0;
     margin-left: auto;
     flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: rgb(56, 85, 130);
+    transition: transform 0.5s ease;
+}
+.eum-boxitem details[open] summary svg{
+    transform: rotate(90deg);
+    fill: #47b2e4;
+}
+.eum-boxitem details[open] summary div {
+    color: #47b2e4;
+}
+.eum-boxitem details summary div:hover{
+    color: #47b2e4;
+}
+.eum-boxitem details summary svg:hover{
+    fill: #47b2e4;
 }
 .eum-boxitem details > div{
     line-height: 23px;
     margin: 0 12px 0 10px;
     color: #444444;
-}
-.toggle-num{
-    color: #47b2e4;
-    font-weight: 500;
 }
 .eum-img{
     flex: 0.7;
