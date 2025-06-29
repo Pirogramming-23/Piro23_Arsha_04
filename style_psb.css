@@ -47,22 +47,33 @@ section {
   color: #37517e;
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 9px;
 }
 
-.section-title h2::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 3px;
+.underline {
+  display: flex;
+  width: 160px;
+  margin: 7px auto 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.underline .line {
+  flex: 1;
+  background-color: #ddd;
+  height: 2px; 
+}
+
+.underline .line.blue {
+  flex: 1.2;
   background-color: #47b2e4;
-  margin: 8px auto 0;
+  height: 3px;  
 }
 
 .section-title p {
   color: #5e5e5e;
   max-width: 700px;
-  margin: 10px auto 0;
+  margin: 20px auto 60px;
 }
 
 /* ===== Recent Blog Posts Section ===== */
@@ -74,7 +85,7 @@ section {
 .posts-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 25px;
   justify-content: center;
 }
 
@@ -87,14 +98,11 @@ section {
   display: flex;
   flex-direction: column;
   transition: 0.4s;
-}
-
-.post-card:hover {
-   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
 }
 
 .post-image {
-  height: 277.27px;
+  flex: 0 0 277.27px;
   overflow: hidden;
   position: relative;
 }
@@ -116,48 +124,81 @@ section {
   right: 0px;
   background-color: #47b2e4;
   color: #fff;
-  font-size: 12px;
-  padding: 5px 10px;
-  font-weight: 600px;
+  font-size: 13px;
+  padding: 6px 10px;
+  font-weight: 500px;
 }
 
 .post-content {
   flex-grow: 1;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
+  margin-top: 8px;
 }
 
-.post-card:hover .post-content h3 {
+.post-card:hover .post-content h3, .post-card:hover .read-more {
   color: #47b2e4;
 }
 
 .post-content h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: #37517e;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: 700;
+  margin-top: -10px;
 }
 
 .post-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   font-size: 14px;
-  color: #777;
-  margin-bottom: 15px;
+  color: #ababab;
+  margin-bottom: 5px;
+  max-width: 80%;
+  margin-left: -10px;
+}
+
+.post-meta .meta-item {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.post-meta .meta-item svg{
+  margin-right: 10px;
+  fill:#47b2e4
+}
+
+.post-meta .meta-separator {
+  padding: 0 5px;
+}
+
+.thin-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #efefef;
+  margin: 20px 0;
+  flex: 0 0 auto;
+  margin-top: 10px;
+  margin-bottom: 4px;
 }
 
 .read-more {
-  color: #777;
-  font-weight: 400;
+  color: #929292;
+  font-weight: 500;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   line-height: 1.8;
   padding: 5px 0;
 }
 
 /* ===== Contact Section ===== */
-/* Container narrower padding (reduce outer whitespace) */
 .contact-section .container {
   max-width: 1320px;
   padding: 0 10px;
@@ -179,36 +220,37 @@ section {
   padding: 30px;
   border-top: 3px solid #47b2e4;
   border-bottom: 3px solid #47b2e4;
+  max-height: 604.12px;
 }
 
-/* Flex Widths: Left narrower, Right wider */
 .contact-info {
-    flex: 1 1 40%;
+  flex: 1 1 38%;
   min-width: 400px;
 }
 
 .contact-form {
-    flex: 1 1 55%;
+  flex: 1 1 55%;
   min-width: 500px;
 }
 
 .contact-form label {
   margin-bottom: 10px;
-  font-size: 14px;
-  color: #777;
+  font-size: 16px;
+  color: #444444;
   font-weight: 400;
 }
 
 .contact-form .form-group {
-  width: 100%;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .contact-form .form-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 /* Contact Items */
@@ -216,7 +258,7 @@ section {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   border-bottom: none;
 }
 
@@ -224,40 +266,41 @@ section {
   border-bottom: none;
 }
 
-.contact-item i {
-  font-size: 20px;
+.contact-item svg {
+  height: 20px;
+  width: 20px;
   color: #47b2e4;
   flex-shrink: 0;
-  margin-top: 4px;
-  margin-left: 20px;
+  margin-top: 9px;
+  margin-left: 15px;
 }
 
 .contact-item h4 {
-  margin: 0 0 10px 30px;
+  margin: -5px 0 10px 10px;
   font-size: 18px;
   color: #37517e;
   font-weight: bold;
 }
 
 .contact-item p {
-  margin: 0 0 10px 20px;
+  margin: -7px 0 10px 10px;
   color: #777;
   font-size: 14px;
+  margin-top: -10px;
 }
 
 /* Map */
 .contact-map iframe {
   width: 100%;
-  height: 250px;
+  height: 270px;
   border: 0;
-  margin-top: 10px;
 }
 
 /* Form */
 .contact-form form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .contact-form .form-row {
@@ -280,13 +323,17 @@ section {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #ddd;
-  border-radius: 4px;
   font-size: 14px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 1px solid #47b2e4; 
+  outline: none;
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 220px;
 }
 
 .contact-form button {
@@ -296,10 +343,13 @@ section {
   padding: 12px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 16.5px;
+  font-weight: 300px;
   transition: background-color 0.3s;
-  max-width: 200px;
   align-self: center;
+  width: 166.71px;
+  height: 44px;
+  margin-top: 5px;
 }
 
 .contact-form button:hover {
@@ -314,7 +364,7 @@ section {
     gap: 20px
   }
 
-  .contact-info,  .contact-form {
+  .contact-info, .contact-form {
     width: 90%;
     max-width: 696px;
     min-width: auto;  
@@ -345,33 +395,45 @@ section {
 }
 
 .newsletter-section form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  max-width: 500px;
+display: flex;
+  max-width: 600px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  height: 50px;
 }
 
 .newsletter-section input {
-  flex: 1 1 200px;
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 25px;
+  flex: 1;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  color: #444;
+}
+
+.newsletter-section input:focus {
+  outline: none;
+  border: none;
 }
 
 .newsletter-section button {
   background-color: #47b2e4;
   color: #fff;
   border: none;
-  padding: 10px 25px;
-  border-radius: 25px;
+  padding: 0 30px;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
+  height: 100%;
+  border-radius: 0;
 }
 
 .newsletter-section button:hover {
-  background-color: #209dd8;
+  background-color: #63bde7;
 }
 
 /*아래쪽 흰색*/
