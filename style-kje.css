@@ -1,6 +1,9 @@
+/*토글 기본 스타일 삭제*/
 details summary {
   list-style: none;
 }
+
+/*header 부분*/
 .header {
   position: fixed;
   top: 0;
@@ -168,6 +171,7 @@ details summary {
     font-size: 30px;
     font-weight: bold;
 }
+/*navigation 부분 - 메뉴 드롭다운 두 개 까지 구현 완료*/
 .nav{
     display: flex;
     gap: 5px;
@@ -223,7 +227,6 @@ details summary {
     top: 0;
     right: 100%;         
     margin-right: 5px;
-
     width: 200px;
     background-color: white;
     border-radius: 4px;
@@ -280,7 +283,6 @@ details summary {
     margin-right: 3px;
     left: auto;
 }
-
 .nav-deepdropdown-menu svg {
     margin-left: auto; 
     transform: rotate(0deg);
@@ -315,6 +317,7 @@ details summary {
     cursor: pointer;
 }
 
+/*banner 부분*/
 .banner{
     background-color: #37517e;
     padding: 120px 0 80px;
@@ -435,6 +438,7 @@ details summary {
   100% { transform: translateX(-3850px); }
 }
 
+/*about us 부분*/
 .about-us{
     display: flex;
     flex-direction: column;
@@ -536,6 +540,7 @@ details summary {
     transform: translateX(7px);
 }
 
+/*eum ipsam 부분*/
 .eum-ipsam{
     display: flex;
     background-color: #f5f6f8;
@@ -640,3 +645,5 @@ details summary {
     max-height: 400px;
     display: block;
 }
+
+/*===== 반응형 구현 추가 =====*/
