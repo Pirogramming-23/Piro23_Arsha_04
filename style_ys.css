@@ -1,0 +1,759 @@
+@import "./reset.css";
+
+
+/* //////////////////////////////////// */
+/* 공통 */
+
+body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+}
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    
+}
+
+
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////////// */
+
+.Portfolio-section {
+    
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+.Portfolio-container {
+    text-align: center;
+
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+.Portfolio-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+.Portfolio-container h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+
+.Portfolio-container h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*순수 HTML + CSS만 사용할 경우
+"버튼 누르면 필터링해서 해당 항목만 보이게" 하는 건 라디오버튼 토글 형태로만 가능해.
+(진짜 버튼 클릭 필터링은 JS 필요)*/
+
+.Portfolio-section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+.Portfolio-container {
+    text-align: center;
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Portfolio-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.Portfolio-container h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+
+.Portfolio-container h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* ===== 필터 버튼 ===== */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+input[type="radio"][name="filter"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clip-path: inset(100%);
+    white-space: nowrap;
+    border: none;
+  }
+
+.filter-buttons input {
+    display: none;
+}
+
+.filter-buttons label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons input:checked + label {
+    background: #3498db;
+    color: #fff;
+}
+
+/* ===== 이미지 그리드 ===== */
+.portfolio-gallery {
+    column-count: 3;        /* 열 개수 */
+    column-gap: 20px;       /* 열 사이 간격 */
+    padding: 20px;
+    
+}
+
+.portfolio-item {
+    break-inside: avoid;    /* 이미지 중간에 열 나누기 방지 (꼭 필요함) */
+    margin-bottom: 20px;    /* 아래 간격 */
+    /* 에니메이션 효과 */
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+/*포트폴리오 안에 마우스 올리면 뜨는거*/
+
+
+/* 카드 박스 */
+.card-box {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  
+  /* .card-box:hover {
+    transform: scale(1.03);
+  } */
+  
+  .card-box img {
+    width: 100%;
+    display: block;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+  } 
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; 
+    
+  }
+  .card-box:hover .card-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+   
+
+
+
+
+/* ===== 필터링 동작 (CSS만으로 구현) ===== */
+
+/* All 선택 시 전부 보임 */
+#filter-all:checked ~ .portfolio-gallery .portfolio-item {
+    display: block;
+}
+
+/* App 선택 시 App만 보임 */
+#filter-app:checked ~ .portfolio-gallery .portfolio-item {
+    display: none;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+#filter-app:checked ~ .portfolio-gallery .app {
+    display: block;
+}
+
+/* Card 선택 시 Card만 보임 */
+#filter-card:checked ~ .portfolio-gallery .portfolio-item {
+    display: none;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+#filter-card:checked ~ .portfolio-gallery .card {
+    display: block;
+}
+
+/* Web 선택 시 Web만 보임 */
+#filter-web:checked ~ .portfolio-gallery .portfolio-item {
+    display: none;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+#filter-web:checked ~ .portfolio-gallery .web {
+    display: block;
+}
+
+
+
+@media (max-width: 900px) {
+    .portfolio-gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-gallery {
+        column-count: 1;
+    }
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////// team*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    text-align: center;
+  }
+  
+  .team-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .team-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .team-section h1::before {
+    content: "";
+    position: absolute;
+    margin-bottom: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 1px;
+    background: 
+color-mix(in srgb, var(--default-color), transparent 60%);
+    
+
+  }
+  
+  .team-section h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 8px auto 0;
+  }
+  
+  .team-section p {
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    font-size: 14px;
+  }
+  
+  /* Flexbox 기반 레이아웃 */
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .team-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: calc(50% - 15px); /* 2열 */
+  
+    background-color: var(--surface-color);
+    position: relative;
+    transition: 0.5s;
+    height: 100%;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .team-card img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .team-card .info h2 {
+    margin: 0;
+    color: #34495e;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .team-card .info h3 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  
+  .team-card .info h3::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #ccc;
+    margin-top: 5px;
+  }
+  
+  .team-card .info p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-icons span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .social-icons span:hover {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  /* 모바일: 1열 */
+  @media screen and (max-width: 768px) {
+    .team-card {
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .team-card img {
+      margin-bottom: 15px;
+    }
+  
+    .team-card .info {
+      text-align: center;
+    }
+  
+    .team-card .info h3::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////// pricing */
+
+
+/* 전체 섹션 배경 및 텍스트 기본값 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+  }
+  .pricing{
+    padding: 50px 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  
+
+  .section-title h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title h2::before {
+    content: "";
+    position: absolute;
+    margin-bottom: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 1px;
+    background: 
+color-mix(in srgb, var(--default-color), transparent 60%);
+    
+
+  }
+  
+  .section-title h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 8px auto 0;
+  }
+  
+  
+  .section-title p {
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  
+  /* Flexbox 레이아웃 */
+  .pricing-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    height: 100%;
+  }
+  
+  /* 각 카드 박스 */
+  .pricing-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    padding: 60px 40px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pricing-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .pricing-item h3 {
+    color: #34495e;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .pricing-item h4 {
+    font-size: 28px;
+    color: #3498db;
+    margin: 20px 0;
+  }
+  
+  .pricing-item h4 sup {
+    font-size: 16px;
+    vertical-align: super;
+  }
+  
+  .pricing-item h4 span {
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  .pricing-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .pricing-item ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #2c3e50;
+  }
+  
+  .pricing-item ul li.na {
+    color: #ccc;
+    text-decoration: line-through;
+  }
+  
+  .buy-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: 2px solid #3498db;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: auto;
+  }
+  
+  .buy-btn:hover {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  /* Featured Plan 강조 효과 */
+  .featured {
+    border-top: 4px solid #3498db;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* 반응형: 모바일에서 세로 쌓기 */
+  @media screen and (max-width: 768px) {
+    .pricing-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+
+:root {
+    --background-color: #ffffff;
+    --default-color: #444444;
+    --heading-color: #37517e;
+    --accent-color: #47b2e4;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
+}
+
+:root, [data-bs-theme=light] {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-primary-text-emphasis: #052c65;
+    --bs-secondary-text-emphasis: #2b2f32;
+    --bs-success-text-emphasis: #0a3622;
+    --bs-info-text-emphasis: #055160;
+    --bs-warning-text-emphasis: #664d03;
+    --bs-danger-text-emphasis: #58151c;
+    --bs-light-text-emphasis: #495057;
+    --bs-dark-text-emphasis: #495057;
+    --bs-primary-bg-subtle: #cfe2ff;
+    --bs-secondary-bg-subtle: #e2e3e5;
+    --bs-success-bg-subtle: #d1e7dd;
+
+}
+
+
+:root {
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Jost", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}

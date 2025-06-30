@@ -1,0 +1,538 @@
+@import "./reset.css";
+
+:root {
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Jost", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--default-font);
+}
+
+/* --- Skills Section 스타일 --- */
+.skills-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.skills-container {
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* 모바일 화면에서 줄바꿈을 위함 */
+}
+
+/* --- 콘텐츠 영역 (이미지, 텍스트) --- */
+.skills-content {
+    flex: 1; /* 자식 요소가 1:1 비율을 갖도록 함 */
+    min-width: 300px; /* 최소 너비 지정 */
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.skills-content__image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.skills-content__title {
+    font-weight: bold;
+    font-size: 32px;
+    color: #37517e;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+}
+
+.skills-content__description {
+    font-style: italic;
+    color: color-mix(in srgb, #444444, transparent 30%);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- 스킬 바 --- */
+.skills-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-item__info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.skill-item__progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e9ecef;
+}
+
+.skill-item__progress {
+    height: 100%;
+    background-color: #37517e;
+}
+
+/* 서비스 섹션 css */
+body {
+    margin: 0;
+    background-color: #f3f5fa; /* 페이지 전체 배경색은 유지 */
+}
+
+/* --- Services Section 스타일 --- */
+.services-section {
+    color: #444444;
+    padding: 60px 0;
+    overflow: hidden; /* 섹션 내용이 넘칠 경우 숨김 */
+    background-color: #f5f6f8;
+}
+
+/* services-section 내의 a 태그에만 스타일 적용 */
+.services-section a {
+    color: #47b2e4;
+    text-decoration: none;
+}
+
+.services-section a:hover {
+    color: #73c5eb;
+    text-decoration: none;
+}
+
+/* 컨테이너: 콘텐츠의 최대 너비를 정하고 중앙에 배치 */
+.container-lsy {
+    width: 100%;
+    padding: 0 60px;
+    margin: 0 auto;
+}
+
+.container-lsy > .row {
+    margin: auto;
+}
+/* 섹션 제목 */
+.section-title-lsy {
+    text-align: center;
+    padding-bottom: 30px;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.section-title-lsy h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #37517e;
+    font-family: var(--heading-font);
+}
+
+/* 제목 아래 파란색 밑줄 */
+.section-title-lsy h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.section-title-lsy h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #47b2e4;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.section-title-lsy p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    color: #5e5e5e;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --- 서비스 카드 레이아웃 (섹션에 한정) --- */
+/* row: 카드들을 담는 flex 컨테이너 (데스크톱 기준) */
+.services-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto; /* 데스크톱에서 중앙 정렬 */
+}
+
+/* col-item: 데스크톱에서 4개의 카드가 한 줄에 보이도록 너비 설정 */
+.services-section .col-item {
+    position: relative;
+    padding-right: 12px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+
+
+/* --- 서비스 카드 디자인 --- */
+.service-card {
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    background: #fff;
+    height: 100%; /* 카드의 높이를 통일 */
+}
+
+/* 카드 호버 시 위로 살짝 올라가는 효과 */
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card__icon {
+    margin-bottom: 30px;
+}
+
+/* MODIFIED: i -> svg */
+.service-card__icon svg {
+    color: #47b2e4;
+    /* font-size is replaced by width/height attributes on SVG for better control */
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+.service-card__title {
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 이 부분의 a태그는 이미 상위 a태그에 스타일이 적용되므로, 색상만 지정 */
+.service-card__title a {
+    color: #37517e;
+    transition: ease-in-out 0.6s;
+    font-weight: 700;
+}
+
+.service-card__description {
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* MODIFIED: i -> svg */
+.service-card:hover .service-card__title a, .service-card:hover .service-card__icon svg {
+    color: #209dd8;
+}
+
+#workprocess {
+    padding: 60px 0;
+    background-color: white;
+}
+
+/* --- 프로세스 카드 레이아웃 --- */
+.process-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; /* 카드 사이의 간격 */
+    justify-content: center;
+    padding: 0 60px;
+    margin: 0 auto;
+}
+
+/* --- 프로세스 카드 --- */
+.process-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    flex: 1; /* flex 아이템이 동일한 비율로 공간 차지 */
+    overflow: hidden; /* border-radius가 이미지에 적용되도록 */
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px color-mix(in srgb, #47b2e4, transparent 85%)
+}
+
+.process-card:hover .process-card__image-wrapper img {
+    transform: scale(1.1);
+}
+
+.process-card__image-wrapper {
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 280px;
+}
+
+.process-card__image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.process-card__content {
+    padding: 25px 30px 30px;
+    text-align: left;
+    flex-grow: 1; /* 내용 부분이 남은 공간을 모두 차지하도록 함 */
+    display: flex;
+    flex-direction: column;
+}
+
+.process-card__number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #47b2e4;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -62px; /* 이미지 위로 올라오도록 위치 조정 */
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.process-card__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #37517e;
+    margin: 0 0 15px 0;
+    font-family: var(--heading-font);
+}
+
+.process-card__description {
+    line-height: 1.7;
+    color: #555;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* 설명 부분이 늘어나도록 함 */
+}
+
+.process-card__checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+/* MODIFIED: i -> svg */
+.checklist-item svg {
+    color: #47b2e4;
+    /* font-size is replaced by width/height attributes */
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+
+/* Call To Action 섹션 css */
+.call-to-action {
+    padding: 120px 0;
+    position: relative;
+    clip-path: inset(0);
+}
+
+.cta-section {
+    padding: 120px 0;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.cta-section img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* 다른 모든 콘텐츠보다 뒤에 위치 */
+}
+
+.cta-section::before {
+    content: "";
+    background: color-mix(in srgb,#37517e, transparent 35%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.cta-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 3;
+}
+
+.cta-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 모바일에서 줄바꿈을 위함 */
+}
+
+.cta-content {
+    flex: 1; /* 텍스트 내용이 가능한 많은 공간을 차지하도록 함 */
+    min-width: 0; /* flex 아이템이 줄어들 수 있도록 */
+}
+
+.cta-content__title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    font-family: var(--heading-font);
+}
+
+.cta-content__description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 6px 0;
+    opacity: 0.9;
+    
+}
+
+.cta-button-wrapper {
+    margin-left: 20px; /* 텍스트와 버튼 사이의 간격 */
+}
+
+.cta-button {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 12px 40px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* 버튼 텍스트가 줄바꿈되지 않도록 함 */
+    font-family: var(--heading-font);
+}
+
+.cta-button:hover {
+    background-color: #47b2e4;
+    border-color: #47b2e4;
+}
+
+
+/* --- 반응형 디자인 (max-width 기준) --- */
+@media (max-width: 1199px) {
+    .process-layout, .section-title-lsy, .skills-container, .container > .row {
+        max-width: 960px;
+    }
+    .services-section .col-item {
+        /* 2열 레이아웃 */
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .process-card__image-wrapper {
+        height: 240px;
+    }
+    .cta-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cta-button-wrapper {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .cta-container {
+        max-width: 960px;
+    }
+
+
+}
+/* 태블릿 & 모바일 (991px 이하) */
+@media (max-width: 991px) {
+    /* CTA Section */
+    .process-layout, .section-title-lsy, .skills-container, .container > .row {
+        max-width: 720px;
+    }
+    .section-title-lsy {
+        margin: auto;
+    }
+    .skills-container {
+        flex-direction: column;
+    }
+    
+    /* Work Process Section */
+    .process-layout {
+        flex-direction: column;
+    }
+    .process-card {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    .process-card__image-wrapper {
+        height: 220px;
+    }
+
+    .process-card__number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        left: -2px;
+        top: 12px;
+    }    
+
+}
+
+/* 모바일 (767px 이하) */
+@media (max-width: 767px) {
+    /* Services Section (Mobile) */
+    .process-layout, .section-title-lsy, .skills-container, .container > .row {
+        max-width: 540px;
+    }
+    .services-section .col-item {
+        /* 1열 레이아웃 */
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
