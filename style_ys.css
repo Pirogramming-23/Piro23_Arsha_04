@@ -22,7 +22,7 @@
 
 /* ///////////////////////////////////////////// */
 
-.container {
+.Portfolio-container {
   display: block;
   width: 100%;
   max-width: 1140px;
@@ -135,6 +135,27 @@
   display: block;
 }
 
+
+.hover-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9); /* 하얀색 반투명 박스 */
+  color: #333;
+  padding: 15px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-card:hover .hover-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* --- 초기 위치 설정 (All 상태) --- */
 .portfolio-item.app-1-1  { top: 0;   left: 0; }
 .portfolio-item.card-1-3  { top: 0;   left: calc(33.333% + 8px); }
@@ -176,361 +197,6 @@
 #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-1-2 { top: 0; left: calc(33.333% + 8px); }
 #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-2-6 { top: 0;   left: calc(66.666% + 16px); }
 
-@media (max-width: 991px) {
-  .portfolio-item { width: calc(50% - 12px); }
-  .portfolio-gallery-wrapper { height: 1000px; }
-  /* All */
-  .portfolio-item.app-1  { top: 0;   left: 0; }
-  .portfolio-item.web-1  { top: 0;   left: calc(50% + 12px); }
-  .portfolio-item.card-1 { top: 320px; left: 0; }
-  .portfolio-item.app-2  { top: 320px; left: calc(50% + 12px); }
-  .portfolio-item.web-2  { top: 640px; left: 0; }
-  .portfolio-item.card-2 { top: 640px; left: calc(50% + 12px); }
-  /* App */
-  #filter-app:checked ~ .portfolio-gallery-wrapper { height: 320px; }
-  #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-1 { top: 0; left: 0; }
-  #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-2 { top: 0; left: calc(50% + 12px); }
-  /* Card */
-  #filter-card:checked ~ .portfolio-gallery-wrapper { height: 320px; }
-  #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-1 { top: 0; left: 0; }
-  #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-2 { top: 0; left: calc(50% + 12px); }
-  /* Web */
-  #filter-web:checked ~ .portfolio-gallery-wrapper { height: 320px; }
-  #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-1 { top: 0; left: 0; }
-  #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-2 { top: 0; left: calc(50% + 12px); }
-}
-
-@media (max-width: 767px) {
-  .portfolio-item { width: 100%; }
-  .portfolio-gallery-wrapper { height: 2000px; }
-   /* All */
-  .portfolio-item.app-1  { top: 0;   left: 0; }
-  .portfolio-item.web-1  { top: 320px;   left: 0; }
-  .portfolio-item.card-1 { top: 640px; left: 0; }
-  .portfolio-item.app-2  { top: 960px; left: 0; }
-  .portfolio-item.web-2  { top: 1280px; left: 0; }
-  .portfolio-item.card-2 { top: 1600px; left: 0; }
-  /* App */
-  #filter-app:checked ~ .portfolio-gallery-wrapper { height: 640px; }
-  #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-1 { top: 0; left: 0; }
-  #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-2 { top: 320px; left: 0; }
-  /* Card */
-  #filter-card:checked ~ .portfolio-gallery-wrapper { height: 640px; }
-  #filter-card:checked ~ .portfolio-galler-wrapper .portfolio-item.card-1 { top: 0; left: 0; }
-  #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-2 { top: 320px; left: 0; }
-  /* Web */
-  #filter-web:checked ~ .portfolio-gallery-wrapper { height: 640px; }
-  #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-1 { top: 0; left: 0; }
-  #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-2 { top: 320px; left: 0; }
-}
-
-/* 
-.Portfolio-section {
-    
-    color: var(--default-color);
-    background-color: var(--background-color);
-    padding: 60px 0;
-    scroll-margin-top: 88px;
-    overflow: clip;
-}
-
-.Portfolio-container {
-    
-
-    text-align: center;
-    padding-bottom: 60px;
-    max-width: 1140px;
-    margin: auto;
-    position: relative;
-    
-}
-
-
-
-
-.Portfolio-container h2 {
-    color: var(--heading-color);
-    font-family: var(--heading-font);
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    position: relative;
-    margin-top: 0;  
-}
-.Portfolio-container h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 160px;
-    height: 1px;
-    background: color-mix(in srgb, var(--default-color), transparent 60%);
-    left: 0;
-    right: 0;
-    bottom: 1px;
-    margin: auto;
-}
-
-.Portfolio-container h2::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent-color);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-
-.Portfolio-section {
-    color: var(--default-color);
-    background-color: var(--background-color);
-    padding: 60px 0;
-    scroll-margin-top: 88px;
-    overflow: clip;
-}
-
-.Portfolio-container {
-    text-align: center;
-    width: 100%;
-    max-width: 1140px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.Portfolio-container h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.Portfolio-container h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 160px;
-    height: 1px;
-    background: color-mix(in srgb, var(--default-color), transparent 60%);
-    left: 0;
-    right: 0;
-    bottom: 1px;
-    margin: auto;
-}
-
-.Portfolio-container h2::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent-color);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-
-.filter-buttons {
-    text-align: center;
-    margin-bottom: 20px;
-}
-input[type="radio"][name="filter"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    clip-path: inset(100%);
-    white-space: nowrap;
-    border: none;
-  }
-
-.filter-buttons input {
-    display: none;
-}
-
-.filter-buttons label {
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--background-color);
-    border-radius: 20px;
-    margin: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-buttons input:checked + label {
-    background-color: var(--accent-color);
-    color: var(--background-color);
-
-}
-
-.filter-buttons label:hover{
-  color: var(--background-color);
-  background-color: var(--accent-color);
-}
-
-.portfolio-gallery {
-    column-count: 3;        
-    column-gap: 20px;       
-    padding: 0 100px;
-    margin: auto;
-    text-align: center;
-    
-}
-
-.portfolio-item {
-    
-     opacity: 1;
-     transform: translateY(0);
-     visibility: visible;
-     transition: all 0.5s ease;
-     transition: all 0.5s ease, opacity 0.5s ease; 
-     padding: 12px;
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    
-    
-}
-
-
-.card-box {
-    position: relative;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    overflow: hidden;
-  }
-  
- 
-  
-  .card-box img {
-    width: 100%;
-    display: block;
-    transition: none !important;
-    transform: none !important;
-    filter: none !important;
-    will-change: auto !important;
-    backface-visibility: visible !important;
-  } 
-  
-  .card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; 
-    
-  }
-  .card-box:hover .card-content {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-   
-
-
-
-
-
-#filter-all:checked ~ .portfolio-gallery .portfolio-item {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-}
-
-#filter-app:checked ~ .portfolio-gallery .portfolio-item,
-#filter-card:checked ~ .portfolio-gallery .portfolio-item,
-#filter-web:checked ~ .portfolio-gallery .portfolio-item {
-    opacity: 0;
-    transform: translateY(20px);
-    visibility: hidden;
-    pointer-events: none;
-}
-
-#filter-app:checked ~ .portfolio-gallery .app,
-#filter-card:checked ~ .portfolio-gallery .card,
-#filter-web:checked ~ .portfolio-gallery .web {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    pointer-events: auto;
-}
-
-
-#filter-app:checked ~ .portfolio-gallery .portfolio-item {
-    display: none;
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    pointer-events: auto;
-    transition: all 0.5s ease;
-}
-#filter-app:checked ~ .portfolio-gallery .app {
-    display: block;
-}
-
-
-#filter-card:checked ~ .portfolio-gallery .portfolio-item {
-    display: none;
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    pointer-events: auto;
-    transition: all 0.5s ease;
-}
-#filter-card:checked ~ .portfolio-gallery .card {
-    display: block;
-}
-
-
-#filter-web:checked ~ .portfolio-gallery .portfolio-item {
-    display: none;
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    pointer-events: auto;
-    transition: all 0.5s ease;
-}
-#filter-web:checked ~ .portfolio-gallery .web {
-    display: block;
-}
-
-
-
-@media (max-width: 900px) {
-    .portfolio-gallery {
-        column-count: 2;
-    }
-}
-
-@media (max-width: 600px) {
-    .portfolio-gallery {
-        column-count: 1;
-    }
-} */
 
 
 
@@ -723,14 +389,14 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     padding: 50px 0px;
   }
   
-  .section-title {
+  .pricing-section-title {
     text-align: center;
     margin-bottom: 40px;
   }
   
   
 
-  .section-title h2 {
+  .pricing-section-title h2 {
     font-size: 36px;
     font-weight: bold;
     color: #34495e;
@@ -739,7 +405,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     display: inline-block;
   }
 
-  .section-title h2::before {
+  .pricing-section-title h2::before {
     content: "";
     position: absolute;
     margin-bottom: 1px;
@@ -754,7 +420,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
 
   }
   
-  .section-title h2::after {
+  .pricing-section-title h2::after {
     content: "";
     display: block;
     width: 60px;
@@ -764,7 +430,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   }
   
   
-  .section-title p {
+  .pricing-section-title p {
     color: #7f8c8d;
     max-width: 600px;
     margin: 0 auto;
@@ -782,6 +448,13 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   /* 각 카드 박스 */
   .pricing-item {
     background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+    /* background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
     padding: 60px 40px;
@@ -791,7 +464,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; */
   }
   
   
