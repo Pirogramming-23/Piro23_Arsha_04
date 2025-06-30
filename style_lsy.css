@@ -104,16 +104,6 @@ body {
 }
 
 /* services-section 내의 a 태그에만 스타일 적용 */
-.services-section a {
-    color: #47b2e4;
-    text-decoration: none;
-}
-
-.services-section a:hover {
-    color: #73c5eb;
-    text-decoration: none;
-}
-
 /* 컨테이너: 콘텐츠의 최대 너비를 정하고 중앙에 배치 */
 .container-lsy {
     width: 100%;
