@@ -93,8 +93,8 @@ section {
 .posts-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
   justify-content: center;
+  gap: 25px;
 }
 
 .post-card {
@@ -404,7 +404,7 @@ section {
 }
 
 .contact-form button:hover {
-  background-color: #63bde7;
+  background-color: #6fcef7;
 }
 
 /* Responsive */
@@ -504,7 +504,7 @@ section {
 }
 
 .newsletter-section button:hover {
-  background-color: #63bde7;
+  background-color: #6fcef7;
 }
 
 /*아래쪽 흰색*/
@@ -696,8 +696,7 @@ section {
 }
 
 .footer-credit-link:hover {
-    color: #9fe2ff;
-  
+    color: #95ddfc;
 }
 
 .footer-icon-circle {
