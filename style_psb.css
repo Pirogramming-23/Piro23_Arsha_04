@@ -133,8 +133,9 @@ section {
   background-color: #47b2e4;
   color: #fff;
   font-size: 13px;
-  padding: 6px 10px;
-  font-weight: 500px;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-family: var(--default-font);
 }
 
 .post-content {
@@ -165,7 +166,7 @@ section {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: 15px;
   color: #ababab;
   margin-bottom: 10px;
   max-width: 80%;
@@ -192,7 +193,7 @@ section {
   display: block;
   width: 100%;
   height: 1px;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   margin: 20px 0;
   flex: 0 0 auto;
   margin-top: 10px;
@@ -200,7 +201,10 @@ section {
 }
 
 .read-more {
-  color: #929292;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;      
+  color: #7a7a7a;
   font-weight: 500;
   font-size: 16px;
   margin-top: 5px;
@@ -208,6 +212,17 @@ section {
   line-height: 1.8;
   padding: 5px 0;
   font-family: var(--default-font);
+}
+
+.read-more:hover {
+  color: #47b2e4;
+}
+
+.read-more svg {
+   position: relative;
+  fill: currentColor;
+  transition: fill 0.3s;
+  top: 2px;
 }
 
 /* ===== Contact Section ===== */
@@ -299,10 +314,12 @@ section {
 
 .contact-icon-circle:hover {
   background-color: #47b2e4;
+  transition: background-color 0.3s ease;
 }
 
 .contact-icon-circle:hover svg {
   color: #fff;
+  transition: color 0.3s ease;
 }
 
 .contact-item h4 {
