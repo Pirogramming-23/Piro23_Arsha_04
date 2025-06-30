@@ -11,9 +11,10 @@ body {
     font-family: var(--default-font);
 }
 
-.title-text{
+.title-text, .banner-text-upper, .header-upper a, .header-download, .about-us-content button, .eum-title, .eum-non-img{
     font-family: var(--heading-font);
 }
+
 /*토글 기본 스타일 삭제*/
 details summary {
   list-style: none;
