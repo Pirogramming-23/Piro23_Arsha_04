@@ -51,7 +51,6 @@ h2 {
 
 
 
-
 /* ///////////////////////////////////////////// */
 
 .Portfolio-section {
@@ -64,15 +63,16 @@ h2 {
 }
 
 .Portfolio-container {
-    text-align: center;
+    
 
-    width: 100%;
+    text-align: center;
+    padding-bottom: 60px;
     max-width: 1140px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
+    position: relative;
+    
 }
+
 
 
 
@@ -83,6 +83,7 @@ h2 {
     padding-bottom: 20px;
     text-transform: uppercase;
     position: relative;
+    margin-top: 0;  /* 👈 이거 추가!! */
 }
 .Portfolio-container h2::before {
     content: "";
@@ -208,19 +209,25 @@ input[type="radio"][name="filter"] {
 .portfolio-gallery {
     column-count: 3;        /* 열 개수 */
     column-gap: 20px;       /* 열 사이 간격 */
-    padding: 20px;
+    padding: 12px;
     
 }
 
 .portfolio-item {
-    break-inside: avoid;    /* 이미지 중간에 열 나누기 방지 (꼭 필요함) */
-    margin-bottom: 20px;    /* 아래 간격 */
-    /* 에니메이션 효과 */
+    /* break-inside: avoid;    
+    margin-bottom: 20px;    
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
     pointer-events: auto;
     transition: all 0.5s ease;
+     */
+     opacity: 1;
+     transform: translateY(0);
+     visibility: visible;
+     transition: all 0.5s ease;
+     transition: all 0.5s ease, opacity 0.5s ease; 
+     padding: 12px;
 }
 
 .portfolio-item img {
@@ -284,7 +291,27 @@ input[type="radio"][name="filter"] {
 
 /* All 선택 시 전부 보임 */
 #filter-all:checked ~ .portfolio-gallery .portfolio-item {
-    display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+#filter-app:checked ~ .portfolio-gallery .portfolio-item,
+#filter-card:checked ~ .portfolio-gallery .portfolio-item,
+#filter-web:checked ~ .portfolio-gallery .portfolio-item {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#filter-app:checked ~ .portfolio-gallery .app,
+#filter-card:checked ~ .portfolio-gallery .card,
+#filter-web:checked ~ .portfolio-gallery .web {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
 /* App 선택 시 App만 보임 */
