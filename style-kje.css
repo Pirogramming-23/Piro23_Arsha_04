@@ -7,6 +7,13 @@
     font-family: var(--default-font);
 }
 
+body {
+    font-family: var(--default-font);
+}
+
+.title-text{
+    font-family: var(--heading-font);
+}
 /*토글 기본 스타일 삭제*/
 details summary {
   list-style: none;
@@ -611,6 +618,9 @@ details summary {
     padding: 15px 50px;
     flex-shrink: 0;
 }
+.eum-boxlist {
+    font-weight: 600;
+}
 .eum-img{
     flex: 0.75;
     align-items: center;
@@ -633,6 +643,7 @@ details summary {
     color: #37517e;
     margin-top: 20px;
     padding: 10px;
+    font-family: var(--heading-font);
 }
 .eum-title strong{
     font-weight: 600;
