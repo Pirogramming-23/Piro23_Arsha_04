@@ -2,6 +2,9 @@
 details summary {
   list-style: none;
 }
+.content-section {
+    scroll-margin-top: 100px;
+}    
 
 /*header 부분*/
 .header {
@@ -471,7 +474,7 @@ details summary {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 0;
+    padding: 60px;
     background-color: #fff;
 }
 .about-us-title{
@@ -505,11 +508,11 @@ details summary {
 }
 .about-us-contents{
     display: flex;
-    gap: 40px;
+    gap: 10px;
     justify-content: center;
     width: 100%;
     max-width: 1300px;
-    color: #444444;;
+    color: #444444;
     margin-top: 50px;
 }
 .about-us-content{
@@ -534,7 +537,7 @@ details summary {
     fill: #47b2e4;
 }
 .about-us-content-listitem div{
-    font-size: 15px;
+    font-size: 16px;
 }
 #about-us-content-right{
     display: flex;
@@ -674,3 +677,7 @@ details summary {
 }
 
 /*========== 반응형 구현 추가 ==========*/
+
+@media (max-width: 991px){
+    
+}
