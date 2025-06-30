@@ -8,129 +8,112 @@
     <title>Document</title>
 </head>
 <body>
-    <section id="Portfolio" class="Portfolio-section">
-        <div class="Portfolio-container">
-            <h2>Portfolio</h2>
+    <div class="Portfolio-container">
+        <div class="section-title">
+            <h2 class="section-title__heading">Portfolio</h2>
+            
             <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div>
 
-                <!-- radio input들 (버튼용) -->
-                <input type="radio" name="filter" id="filter-all" checked>
-                <input type="radio" name="filter" id="filter-app">
-                <input type="radio" name="filter" id="filter-card">
-                <input type="radio" name="filter" id="filter-web">
+        <!-- 필터링을 위한 숨겨진 라디오 입력 -->
+        <input type="radio" name="filter" id="filter-all" class="filter-input" checked>
+        <input type="radio" name="filter" id="filter-app" class="filter-input">
+        <input type="radio" name="filter" id="filter-card" class="filter-input">
+        <input type="radio" name="filter" id="filter-web" class="filter-input">
 
-                <!-- 버튼 UI -->
-                <div class="filter-buttons">
-                    <label for="filter-all">All</label>
-                    <label for="filter-app">App</label>
-                    <label for="filter-card">Card</label>
-                    <label for="filter-web">Web</label>
-                </div>
+        <!-- 보이는 필터 버튼 (라벨) -->
+        <div class="filter-controls">
+            <label for="filter-all" class="filter-label">All</label>
+            <label for="filter-app" class="filter-label">App</label>
+            <label for="filter-card" class="filter-label">Card</label>
+            <label for="filter-web" class="filter-label">Web</label>
+        </div>
 
-                <!-- 갤러리 -->
-                <div class="portfolio-gallery">
-                    <div class="portfolio-item app">
-                        <div class="card-box">
-                            <img src="./img/portfolio-app1.webp" alt="App1">
-                            <div class="card-content">
-                                <h4>App1</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item app">
-                        <div class="card-box">
-                            <img src="./img/portfolio-app2.webp" alt="App2">
-                            <div class="card-content">
-                                <h4>App2</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item app">
-                        <div class="card-box">
-                            <img src="./img/portfolio-app3.webp" alt="App2">
-                            <div class="card-content">
-                                <h4>App3</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item card">
-                        <div class="card-box">
-                            <img src="./img/portfolio-card1.webp" alt="Card1">
-                            <div class="card-content">
-                                <h4>Product 1</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item card">
-                        <div class="card-box">
-                            <img src="./img/portfolio-card2.webp" alt="Card2">
-                            <div class="card-content">
-                                <h4>Product 2</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item card">
-                        <div class="card-box">
-                            <img src="./img/portfolio-card3.webp" alt="Card2">
-                            <div class="card-content">
-                                <h4>Product 3</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item web">
-                        <div class="card-box">
-                            <img src="./img/portfolio-web1.webp" alt="Web1">
-                            <div class="card-content">
-                                <h4>Branding 1</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item web">
-                        <div class="card-box">
-                            <img src="./img/portfolio-web2.webp" alt="Web2">
-                            <div class="card-content">
-                                <h4>Branding 2</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio-item web">
-                        <div class="card-box">
-                            <img src="./img/portfolio-web3.webp" alt="Web2">
-                            <div class="card-content">
-                                <h4>Branding 3</h4>
-                              <p class="card-title">Lorem ipsum, dolor sit</p>
-                              <div class="icons">🔍 🔗</div>
-                            </div>
-                        </div>
-                        
+        <div class="portfolio-gallery-wrapper">
+            <div class="portfolio-item app app-1-1">
+                
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-app1.webp" alt="App 1(1)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
                     </div>
                 </div>
-            </section>
-            
+            </div>
+            <div class="portfolio-item web web-1-2">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-web2.webp" alt="Web 1(2)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card card-1-3">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-card1.webp" alt="Card 1(3)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item app app-2-4">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-app2.webp" alt="App 2(4)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item web web-2-6">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-web3.webp" alt="Web 2(6)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card card-2-8">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-card2.webp" alt="Card 2(8)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item app app-3-5">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-app3.webp" alt="App 3(5)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item web web-3-7">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-web1.webp" alt="Web 3(7)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card card-3-9">
+                <div class="portfolio-card">
+                    <img src="./img/portfolio-card3.webp" alt="Card 3(9)">
+                    <div class="hover-box">
+                        <h3>Product 2</h3>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <section class="team-section">
@@ -205,60 +188,62 @@
 <section id="pricing" class="pricing section light-background">
 
     <!-- Section Title -->
-    <div class="container section-title">
-      <h2>Pricing</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-    </div>
-  
-    <div class="container">
-  
-      <div class="pricing-flex">
-  
-        <!-- Free Plan -->
-        <div class="pricing-item">
-          <h3>Free Plan</h3>
-          <h4><sup>$</sup>0<span> / month</span></h4>
-          <ul>
-            <li>Quam adipiscing vitae proin</li>
-            <li>Nec feugiat nisl pretium</li>
-            <li>Nulla at volutpat diam uteera</li>
-            <li class="na">Pharetra massa massa ultricies</li>
-            <li class="na">Massa ultricies mi quis hendrerit</li>
-          </ul>
-          <a href="#" class="buy-btn">Buy Now</a>
+     <div class="pricing-body">
+        <div class="container pricing-section-title">
+        <h2>Pricing</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div>
-  
-        <!-- Business Plan (Featured) -->
-        <div class="pricing-item featured">
-          <h3>Business Plan</h3>
-          <h4><sup>$</sup>29<span> / month</span></h4>
-          <ul>
-            <li>Quam adipiscing vitae proin</li>
-            <li>Nec feugiat nisl pretium</li>
-            <li>Nulla at volutpat diam uteera</li>
-            <li>Pharetra massa massa ultricies</li>
-            <li>Massa ultricies mi quis hendrerit</li>
-          </ul>
-          <a href="#" class="buy-btn">Buy Now</a>
+    
+        <div class="container">
+    
+        <div class="pricing-flex">
+    
+            <!-- Free Plan -->
+            <div class="pricing-item">
+            <h3>Free Plan</h3>
+            <h4><sup>$</sup>0<span> / month</span></h4>
+            <ul>
+                <li>Quam adipiscing vitae proin</li>
+                <li>Nec feugiat nisl pretium</li>
+                <li>Nulla at volutpat diam uteera</li>
+                <li class="na">Pharetra massa massa ultricies</li>
+                <li class="na">Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+    
+            <!-- Business Plan (Featured) -->
+            <div class="pricing-item featured">
+            <h3>Business Plan</h3>
+            <h4><sup>$</sup>29<span> / month</span></h4>
+            <ul>
+                <li>Quam adipiscing vitae proin</li>
+                <li>Nec feugiat nisl pretium</li>
+                <li>Nulla at volutpat diam uteera</li>
+                <li>Pharetra massa massa ultricies</li>
+                <li>Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+    
+            <!-- Developer Plan -->
+            <div class="pricing-item">
+            <h3>Developer Plan</h3>
+            <h4><sup>$</sup>49<span> / month</span></h4>
+            <ul>
+                <li>Quam adipiscing vitae proin</li>
+                <li>Nec feugiat nisl pretium</li>
+                <li>Nulla at volutpat diam uteera</li>
+                <li>Pharetra massa massa ultricies</li>
+                <li>Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+    
         </div>
-  
-        <!-- Developer Plan -->
-        <div class="pricing-item">
-          <h3>Developer Plan</h3>
-          <h4><sup>$</sup>49<span> / month</span></h4>
-          <ul>
-            <li>Quam adipiscing vitae proin</li>
-            <li>Nec feugiat nisl pretium</li>
-            <li>Nulla at volutpat diam uteera</li>
-            <li>Pharetra massa massa ultricies</li>
-            <li>Massa ultricies mi quis hendrerit</li>
-          </ul>
-          <a href="#" class="buy-btn">Buy Now</a>
+    
         </div>
-  
-      </div>
-  
-    </div>
+        </div>     
   
   </section>
     

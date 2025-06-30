@@ -1,10 +1,30 @@
+:root {
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Jost", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+.section1 {
+    font-family: var(--default-font);
+}
+
+body {
+    font-family: var(--default-font);
+}
+
+.title-text, .banner-text-upper, .header-upper a, .header-download, .about-us-content button, .eum-title, .eum-non-img{
+    font-family: var(--heading-font);
+}
+
 /*토글 기본 스타일 삭제*/
 details summary {
   list-style: none;
 }
 .content-section {
     scroll-margin-top: 100px;
-}    
+}
+*{
+    font-family: var(--default-font);
+}
 
 /*header 부분*/
 .header {
@@ -13,6 +33,7 @@ details summary {
   left: 0;
   right: 0;
   z-index: 999;
+  font-family: var(--default-font);
 }
 .non-header{
     overflow-y: scroll;
@@ -77,6 +98,9 @@ details summary {
 .left-arrow, .right-arrow, .header-middle-text{
     display: flex;
     align-items: center;
+    color: white;
+}
+.header-middle-text a{
     color: white;
 }
 .header-middle svg{
@@ -187,6 +211,7 @@ details summary {
     margin-left: auto;
     padding: 0;
     margin-block: 0;
+    font-family: var(--default-font);
 }
 .navigation-item{
     position: relative;
@@ -204,6 +229,7 @@ details summary {
     padding: 18px 15px;
     font-size: 15px;
     color: inherit;
+    font-family: var(--default-font);
 }
 .navigation-item a svg {
     width: 16px;
@@ -483,7 +509,8 @@ details summary {
     margin-bottom: 40px;
     font-size: 30px;
     font-weight: 600;
-    color: #37517e;;
+    color: #37517e;
+    font-family: var(--default-font);
 }
 .about-us-titledivline{
     position: relative;
@@ -575,12 +602,14 @@ details summary {
     display: flex;
     background-color: #f5f6f8;
     justify-content: center;
+    font-family: var(--default-font);
 }
 .eum-contents{
     display: flex;
     flex-direction: row;
     gap: 10px;
     padding-bottom: 30px;
+    font-family: var(--default-font);
 }
 
 .eum-non-img{
@@ -589,6 +618,9 @@ details summary {
     margin-top: 30px;
     padding: 15px 50px;
     flex-shrink: 0;
+}
+.eum-boxlist {
+    font-weight: 600;
 }
 .eum-img{
     flex: 0.75;
@@ -612,6 +644,7 @@ details summary {
     color: #37517e;
     margin-top: 20px;
     padding: 10px;
+    font-family: var(--heading-font);
 }
 .eum-title strong{
     font-weight: 600;

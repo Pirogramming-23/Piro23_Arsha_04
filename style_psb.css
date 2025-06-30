@@ -8,56 +8,56 @@
 
 
 /* ===== 공통 ===== */
-* {
+.sb-section * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
+.sb-section body {
   background-color: #f5f6f8;
   color: #444;
   line-height: 1.6;
 }
 
-a {
+.sb-section a {
   text-decoration: none;
   color: #47b2e4;
 }
 
-a:hover {
+.sb-section a:hover {
   color: #209dd8;
 }
 
 /* ===== 컨테이너 ===== */
-.container {
+.sb-section .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 /* ===== 섹션 공통 ===== */
-section {
+.sb-section section {
   padding: 60px 0;
   background-color: #fff;
 }
 
-.section-title {
+.sb-section .section-title {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.section-title h2 {
+.sb-section .section-title h2 {
+  font-family: var(--heading-font) ;
   font-size: 32px;
   font-weight: 700;
   color: #37517e;
   position: relative;
   display: inline-block;
-  padding-bottom: 9px;
-  font-family: var(--heading-font);
+  padding-bottom: 10px;
 }
 
-.underline {
+.sb-section .underline {
   display: flex;
   width: 160px;
   margin: 7px auto 0;
@@ -65,39 +65,40 @@ section {
   justify-content: center;
 }
 
-.underline .line {
+.sb-section .underline .line {
   flex: 1;
   background-color: #ddd;
   height: 2px; 
 }
 
-.underline .line.blue {
+.sb-section .underline .line.blue {
   flex: 1.2;
   background-color: #47b2e4;
   height: 3px;  
 }
 
-.section-title p {
+.sb-section .section-title p {
   color: #444444;
   max-width: 700px;
   margin: 20px auto 60px;
   font-family: var(--default-font);
+  margin-bottom: 50px;
 }
 
 /* ===== Recent Blog Posts Section ===== */
-.recent-posts-section {
+.sb-section .recent-posts-section {
   background-color: #f5f6f8;
   padding: 60px 0;
 }
 
-.posts-grid {
+.sb-section .posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 416px);
   gap: 25px;
   justify-content: center;
 }
 
-.post-card {
+.sb-section .post-card {
   height: 481.14px;
   background: #fff;
   overflow: hidden;
@@ -108,36 +109,36 @@ section {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
 }
 
-.post-image {
+.sb-section .post-image {
   flex: 0 0 277.27px;
   overflow: hidden;
   position: relative;
 }
 
-.post-image img {
+.sb-section .post-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.post-card:hover .post-image img {
+.sb-section .post-card:hover .post-image img {
   transform: scale(1.1);
 }
 
-.post-date {
+.sb-section .post-date {
   position: absolute;
   bottom: 0px;
   right: 0px;
   background-color: #47b2e4;
   color: #fff;
   font-size: 13px;
-  padding: 5px 12px;
+  padding: 10px 12px;
   font-weight: 500;
   font-family: var(--default-font);
 }
 
-.post-content {
+.sb-section .post-content {
   flex-grow: 1;
   padding: 30px;
   display: flex;
@@ -147,11 +148,11 @@ section {
   margin-top: 8px;
 }
 
-.post-card:hover .post-content h3, .post-card:hover .read-more {
+.sb-section .post-card:hover .post-content h3, .post-card:hover .read-more {
   color: #47b2e4;
 }
 
-.post-content h3 {
+.sb-section .post-content h3 {
   font-size: 20px;
   color: #37517e;
   margin-bottom: 15px;
@@ -161,7 +162,7 @@ section {
   line-height: 1.2;
 }
 
-.post-meta {
+.sb-section .post-meta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -173,22 +174,22 @@ section {
   font-family: var(--default-font);
 }
 
-.post-meta .meta-item {
+.sb-section .post-meta .meta-item {
   display: flex;
   align-items: center;
   padding: 0 8px;
 }
 
-.post-meta .meta-item svg{
+.sb-section .post-meta .meta-item svg{
   margin-right: 10px;
   fill:#47b2e4
 }
 
-.post-meta .meta-separator {
+.sb-section .post-meta .meta-separator {
   padding: 0 5px;
 }
 
-.post-thin-divider {
+.sb-section .post-thin-divider {
   display: block;
   width: 100%;
   height: 1px;
@@ -199,7 +200,7 @@ section {
   margin-bottom: 4px;
 }
 
-.read-more {
+.sb-section .read-more {
   display: inline-flex;
   align-items: center;
   gap: 6px;      
@@ -213,11 +214,11 @@ section {
   font-family: var(--default-font);
 }
 
-.read-more:hover {
+.sb-section .read-more:hover {
   color: #47b2e4;
 }
 
-.read-more svg {
+.sb-section .read-more svg {
    position: relative;
   fill: currentColor;
   transition: fill 0.3s;
@@ -225,21 +226,21 @@ section {
 }
 
 /* ===== Contact Section ===== */
-.contact-section .container {
+.sb-section .contact-section .container {
   max-width: 1320px;
   padding: 0 10px;
   margin: 0 auto;
 }
 
 /* Contact Row */
-.contact-row {
+.sb-section .contact-row {
   display: flex;
   gap: 23px;
   flex-wrap: wrap;
 }
 
 /* Box Styles */
-.contact-info, .contact-form {
+.sb-section .contact-info, .contact-form {
   background-color: #fff;
   border-radius: 0;
   box-shadow: 0 0 20px rgba(0,0,0,0.08);
@@ -249,17 +250,17 @@ section {
   max-height: 604.12px;
 }
 
-.contact-info {
+.sb-section .contact-info {
   flex: 1 1 38%;
   min-width: 400px;
 }
 
-.contact-form {
+.sb-section .contact-form {
   flex: 1 1 55%;
   min-width: 500px;
 }
 
-.contact-form label {
+.sb-section .contact-form label {
   margin-bottom: 10px;
   font-size: 16px;
   color: #444444;
@@ -267,13 +268,13 @@ section {
   font-family: var(--default-font);
 }
 
-.contact-form .form-group {
+.sb-section .contact-form .form-group {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.contact-form .form-row {
+.sb-section .contact-form .form-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -281,7 +282,7 @@ section {
 }
 
 /* Contact Items */
-.contact-item {
+.sb-section .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 15px;
@@ -289,11 +290,11 @@ section {
   border-bottom: none;
 }
 
-.contact-item:last-child {
+.sb-section .contact-item:last-child {
   border-bottom: none;
 }
 
-.contact-icon-circle {
+.sb-section .contact-icon-circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,33 +305,33 @@ section {
   flex-shrink: 0;
 }
 
-.contact-item svg {
+.sb-section .contact-item svg {
   height: 20px;
   width: 20px;
   color: #47b2e4;
   flex-shrink: 0;
 }
 
-.contact-icon-circle:hover {
+.sb-section .contact-icon-circle:hover {
   background-color: #47b2e4;
   transition: background-color 0.3s ease;
 }
 
-.contact-icon-circle:hover svg {
+.sb-section .contact-icon-circle:hover svg {
   color: #fff;
   transition: color 0.3s ease;
 }
 
-.contact-item h4 {
-  margin: -3px 0 10px 0;
+.sb-section .contact-item h4 {
+  margin: 4px 0 20px 0;
   font-size: 18px;
   color: #37517e;
   font-weight: bold;
   font-family: var(--heading-font);
 }
 
-.contact-item p {
-  margin: -3px 0 10px 0;
+.sb-section .contact-item p {
+  margin: 4px 0 10px 0;
   color: #444444;
   font-size: 14px;
   margin-top: -10px;
@@ -338,36 +339,36 @@ section {
 }
 
 /* Map */
-.contact-map iframe {
+.sb-section .contact-map iframe {
   width: 100%;
   height: 270px;
   border: 0;
 }
 
 /* Form */
-.contact-form form {
+.sb-section .contact-form form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.contact-form .form-row {
+.sb-section .contact-form .form-row {
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
 }
 
-.contact-form .form-row .form-group {
+.sb-section .contact-form .form-row .form-group {
   flex: 1 1 48%;
   display: flex;
   flex-direction: column;
 }
 
-.contact-form .form-row input {
+.sb-section .contact-form .form-row input {
   flex: 1 1 45%;
 }
 
-.contact-form input, .contact-form textarea {
+.sb-section .contact-form input, .contact-form textarea {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #ddd;
@@ -375,17 +376,17 @@ section {
   font-family: var(--default-font);
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.sb-section .contact-form input:focus, .contact-form textarea:focus {
   border: 1px solid #47b2e4; 
   outline: none;
 }
 
-.contact-form textarea {
+.sb-section .contact-form textarea {
   resize: vertical;
   min-height: 220px;
 }
 
-.contact-form button {
+.sb-section .contact-form button {
   background-color: #47b2e4;
   color: #fff;
   border: none;
@@ -402,7 +403,7 @@ section {
   font-family: var(--default-font);
 }
 
-.contact-form button:hover {
+.sb-section .contact-form button:hover {
   background-color: #6fcef7;
 }
 
@@ -425,13 +426,13 @@ section {
 
 /* ===== Footer Section ===== */
 /*위쪽 회색*/
-.newsletter-section {
+.sb-section .newsletter-section {
   text-align: center;
   margin-bottom: 8px;
   background-color: #f5f6f8;
 }
 
-.newsletter-section h3 {
+.sb-section .newsletter-section h3 {
   font-size: 24px;
   color: #37517e;
   margin-bottom: 18px;
@@ -440,7 +441,7 @@ section {
   font-family: var(--heading-font);
 }
 
-.newsletter-section p {
+.sb-section .newsletter-section p {
   max-width: 800px;
   margin: 0 auto 25px;
   color: #5e5e5e;
@@ -448,7 +449,7 @@ section {
   font-family: var(--default-font);
 }
 
-.newsletter-section form {
+.sb-section .newsletter-section form {
   position: relative;
   max-width: 630px;
   margin: 0 auto;
@@ -463,7 +464,7 @@ section {
   overflow: visible; 
 }
 
-.newsletter-section input {
+.sb-section .newsletter-section input {
   flex: 1;
   border: none;
   padding: 0 20px;
@@ -475,12 +476,12 @@ section {
   font-family: var(--default-font);
 }
 
-.newsletter-section input:focus {
+.sb-section .newsletter-section input:focus {
   outline: none;
   border: none;
 }
 
-.newsletter-section button {
+.sb-section .newsletter-section button {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -502,26 +503,26 @@ section {
   font-family: var(--default-font);
 }
 
-.newsletter-section button:hover {
+.sb-section .newsletter-section button:hover {
   background-color: #6fcef7;
 }
 
 /*아래쪽 흰색*/
-.footer-section {
+.sb-section .footer-section {
   background-color: #fff;
   color: #444;
   padding: 40px 0 20px;
 }
 
 
-.footer-section .container {
+.sb-section .footer-section .container {
   max-width: 1350px;
   padding: 0 30px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-.footer-content {
+.sb-section .footer-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -530,55 +531,55 @@ section {
 }
 
 
-.footer-content h4 {
-  font-size: 16px;
+.sb-section .footer-content h4 {
+  font-size: 17px;
   color: #37517e;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
   font-family: var(--heading-font);
 }
 
-.footer-about,.footer-links,.footer-services,.footer-social {
+.sb-section .footer-about,.footer-links,.footer-services,.footer-social {
   padding: 0;
 }
 
-.footer-about {
+.sb-section .footer-about {
   flex: 2 2 0;
   margin-right: 20px;
 }
-.footer-links {
+.sb-section .footer-links {
   flex: 1 1 0;
   margin-right: 20px;
 }
-.footer-services {
+.sb-section .footer-services {
   flex: 1 1 0;
   margin-right: 20px;
 }
-.footer-social {
+.sb-section .footer-social {
   flex: 2 2 0;
   margin-right: 0px;
 }
 
-.footer-about h4 {
+.sb-section .footer-about h4 {
   font-size: 28px;
 }
 
-.footer-content p {
+.sb-section .footer-content p {
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
 }
 
-.footer-about p {
+.sb-section .footer-about p {
   margin-bottom: 0;
   line-height: 1.8;
 }
 
-.footer-about p:first-of-type {
+.sb-section .footer-about p:first-of-type {
   margin-bottom: 20px;
 }
 
-.footer-list-icon {
+.sb-section .footer-list-icon {
   width: 12px;
   height: 12px;
   margin-right: 0;
@@ -586,17 +587,17 @@ section {
   fill: #47b2e4;
 }
 
-.footer-links ul, .footer-services ul {
+.sb-section .footer-links ul, .footer-services ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links li,.footer-services li {
-  margin-bottom: 8px;
+.sb-section .footer-links li, .sb-section .footer-services li {
+  margin-bottom: 17px;
 }
 
-.footer-links a, .footer-services a , .footer-social a{
+.sb-section .footer-links a, .sb-section .footer-services a , .sb-section .footer-social a{
   color: #777;
   text-decoration: none;
   transition: color 0.3s;
@@ -604,11 +605,11 @@ section {
   font-size: 14px;
 }
 
-.footer-links a:hover, .footer-services a:hover {
+.sb-section .footer-links a:hover, .sb-section .footer-services a:hover {
   color: #47b2e4;
 }
 
-.footer-about .highlight {
+.sb-section .footer-about .highlight {
   font-weight: bold;
   color: #444444;
   font-family: var(--default-font);
@@ -616,17 +617,17 @@ section {
 
 
 /* Social area text */
-.footer-social ul {
+.sb-section .footer-social ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.footer-social li {
+.sb-section .footer-social li {
   margin-top: 8px;
 }
 
-.footer-social a {
+.sb-section .footer-social a {
   color: #444;
   font-size: 14px;
   line-height: 1.6;
@@ -636,11 +637,11 @@ section {
   font-family: var(--default-font);
 }
 
-.footer-social a:hover {
+.sb-section .footer-social a:hover {
   color: #47b2e4;
 }
 
-.social-icons {
+.sb-section .social-icons {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -649,7 +650,7 @@ section {
   margin-top: 10px;
 }
 
-.footer-thin-divider {
+.sb-section .footer-thin-divider {
   display: block;
   width: 80%;
   margin: 0 auto;
@@ -659,47 +660,47 @@ section {
 }
 
 
-.footer-bottom {
+.sb-section .footer-bottom {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
   font-size: 14px;
   color: #444;
-  margin-bottom: 55px;
+  margin-bottom: 30px;
   font-family: var(--default-font);
 }
 
-.footer-bottom p:nth-child(1) {
+.sb-section .footer-bottom p:nth-child(1) {
   font-size: 14px;
   color: #444;
-  margin-bottom: 6px;
+  margin-bottom: 15px;
   font-family: var(--default-font);
 }
 
-.footer-bottom p:nth-child(2) {
+.sb-section .footer-bottom p:nth-child(2) {
   font-size: 13px;
   color: #444;
   margin-top: 0;
   font-family: var(--default-font);
 }
 
-  .footer-bottom .highlight {
+ .sb-section .footer-bottom .highlight {
   font-weight: bold;
   color: #444444;
   font-family: var(--default-font);
 }
 
 
-.footer-credit-link {
+.sb-section .footer-credit-link {
   color: #47b2e4;
   cursor: pointer;
   transition: color 0.3s;
 }
 
-.footer-credit-link:hover {
+.sb-section .footer-credit-link:hover {
     color: #95ddfc;
 }
 
-.footer-icon-circle {
+.sb-section .footer-icon-circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -712,17 +713,17 @@ section {
   overflow: hidden;
 }
 
-.footer-icon-circle svg {
+.sb-section .footer-icon-circle svg {
   width: 18px;
   height: 18px;
   fill: #777;
   transition: fill 0.3s;
 }
 
-.footer-icon-circle:hover {
+.sb-section .footer-icon-circle:hover {
   border-color: #47b2e4;
 }
 
-.footer-icon-circle:hover svg {
+.sb-section .footer-icon-circle:hover svg {
   fill: #47b2e4;
 }
