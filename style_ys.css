@@ -23,11 +23,13 @@
 /* ///////////////////////////////////////////// */
 
 .Portfolio-container {
-  display: block;
-  width: 100%;
-  max-width: 1140px;
-  padding: 0 15px;
-  margin: 0 auto;
+  display: block!important;
+  width: 100%!important;
+  background-color: var(--background-color) !important;
+  max-width: 1140px!important;
+  padding: 0 15px!important;
+  margin: 0 auto!important;
+  
 }
 
 .section-title {
@@ -36,9 +38,10 @@
 }
 
 .section-title__heading {
-  font-family: var(--heading-font);
+  color: var(--heading-color)!important;
+  font-family: var(--heading-font)!important;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 700 !important;
   text-transform: uppercase;
   color: var(--heading-color);
   margin-bottom: 20px;
@@ -54,7 +57,10 @@
   height: 1px;
   background: #ddd;
   bottom: 1px;
-  left: calc(50% - 60px);
+  left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
 
 
 }
@@ -76,6 +82,14 @@
 
 }
 
+
+.section-title p {
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: center; /* 추가: 텍스트 가운데 정렬 */
+}
 .filter-input {
   display: none;
 }
@@ -211,14 +225,15 @@
   .team-section {
     padding: 50px 20px;
     text-align: center;
+    background-color: var(--background-color);
   }
   
   .team-section h1 {
-    color: var(--heading-color);
-    font-family: var(--heading-font);
+    color: var(--heading-color) !important;
+    font-family: var(--heading-font)!important;
     font-size: 36px;
     font-weight: bold;
-    color: #34495e;
+    
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
@@ -260,7 +275,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* ✅ 2열 */
     column-gap: 30px ;
-    row-gap: 100px;
+    row-gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -382,27 +397,45 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     margin: 0;
     padding: 60px 0;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fc;
-    color: #333;
+    
+    color: var(--default-color);
+    background-color: var(--background-color);
   }
+  .pricing-light-background {
+    
+    --background-color: #f5f6f8;
+    --surface-color: #ffffff;
+}
   .pricing{
     padding: 50px 0px;
+    background-color: var(--background-color);
   }
+  
   
   .pricing-section-title {
     text-align: center;
     margin-bottom: 40px;
+    
+    background-color: var(--background-color);
   }
   
   
 
   .pricing-section-title h2 {
-    font-size: 36px;
+    /* font-size: 36px;
     font-weight: bold;
     color: #34495e;
     margin-bottom: 10px;
     position: relative;
-    display: inline-block;
+    display: inline-block; */
+    font-size: 32px;
+    font-weight: 700 !important;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
   }
 
   .pricing-section-title h2::before {
@@ -422,11 +455,15 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   
   .pricing-section-title h2::after {
     content: "";
+    position: absolute;
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #3498db;
-    margin: 8px auto 0;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }
   
   
@@ -447,14 +484,14 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   
   /* 각 카드 박스 */
   .pricing-item {
-    background-color: #fff;
+    /* background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   padding: 30px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; */
 
-    /* background-color: #fff;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
     padding: 60px 40px;
@@ -464,21 +501,40 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
   }
+  .pricing-flex {
+    display: flex;
+    justify-content: center; /* 가로축 중앙 정렬 */
+    gap: 20px; /* 아이템 간 간격 */
+  }
+
+  .pricing-item {
+    max-width: 400px;  /* 300px → 400px로 키움 */
+    height: 550px;
+    padding: 60px 40px; /* 가로 패딩도 살짝 늘려줌 */
+  }
+  
+  
   
   
   
   .pricing-item h3 {
-    color: #34495e;
+    font-weight: 600;
+    margin-bottom: 15px;
     font-size: 20px;
-    margin-bottom: 10px;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    text-align: left; /* ← 왼쪽 정렬 */
   }
   
   .pricing-item h4 {
-    font-size: 28px;
-    color: #3498db;
-    margin: 20px 0;
+    color: var(--accent-color);
+    font-size: 48px;
+    font-weight: 400;
+    font-family: var(--heading-font);
+    margin-bottom: 0;
+    text-align: left; /* ← 왼쪽 정렬 */
   }
   
   .pricing-item h4 sup {
@@ -492,10 +548,15 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   }
   
   .pricing-item ul {
-    list-style: none;
+    
     padding: 0;
     margin: 20px 0;
     text-align: left;
+    list-style: none;
+    color: 
+color-mix(in srgb, var(--default-color), transparent 30%);
+    text-align: left;
+    line-height: 20px;
   }
   
   .pricing-item ul li {
@@ -510,7 +571,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   }
   
   .buy-btn {
-    display: inline-block;
+    /* display: inline-block;
     padding: 10px 25px;
     border-radius: 25px;
     border: 2px solid #3498db;
@@ -518,7 +579,17 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
-    margin-top: auto;
+    margin-top: auto; */
+    color: var(--accent-color);
+    display: inline-block;
+    padding: 8px 35px 10px 35px;
+    border-radius: 50px;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--heading-font);
+    transition: 0.3s;
+    border: 1px solid var(--accent-color);
   }
   
   .buy-btn:hover {
