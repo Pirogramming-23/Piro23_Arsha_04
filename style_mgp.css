@@ -310,12 +310,12 @@
 
 #newsletter_mgp {
   background: white;
-  padding: 0;
+  padding: 60px 0;
   text-align: center;
 }
 .newsletter_mgp_container {
   max-width: 1200px;
-  margin: 120px;
+  margin: auto;
   background: #f5f6f8;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(55,81,126,0.06);
