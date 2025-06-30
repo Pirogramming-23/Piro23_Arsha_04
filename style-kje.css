@@ -2,6 +2,9 @@
 details summary {
   list-style: none;
 }
+.content-section {
+    scroll-margin-top: 100px;
+}    
 
 /*header 부분*/
 .header {
@@ -128,22 +131,6 @@ details summary {
     orientation: block;
     scroll-offsets: 500px, 600px;
 }
-.header-lower {
-    position: sticky;
-    top: 32px;
-    left: 0;
-    right: 0;
-    color: #FFFFFF;
-    background-color: rgba(40, 58, 90, 0);
-    transition: background-color 0.3s ease;
-    z-index: 999;
-    padding-top: 17px;
-    animation-name: scroll-bg-change;
-    animation-duration: auto;
-    animation-timing-function: ease;
-    animation-timeline: headerScroll;
-    animation-fill-mode: both;
-}
 @keyframes scroll-bg-change{
     from{
         background-color: rgba(40, 58, 90, 0);
@@ -152,6 +139,26 @@ details summary {
         background-color: rgba(40, 58, 90, 0.9);
     }
 }*/
+.header-lower {
+    position: sticky;
+    top: 32px;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    background-color: rgba(40, 58, 90, 0.9);
+    z-index: 999;
+    padding-top: 17px;
+    /*
+    transition: background-color 0.3s ease;
+    */
+    /*
+    animation-name: scroll-bg-change;
+    animation-duration: auto;
+    animation-timing-function: ease;
+    animation-timeline: headerScroll;
+    animation-fill-mode: both;
+    */
+}
 
 .header-lower-inner {
     position: sticky;
@@ -408,7 +415,7 @@ details summary {
 .slider{
     box-sizing: border-box;
     width: 100%;
-    height: 5vw;
+    height: 5rem;
     overflow: hidden;
     background-color: #f5f6f8;
     /*padding: 12px 130px;*/
@@ -467,7 +474,7 @@ details summary {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 0;
+    padding: 60px;
     background-color: #fff;
 }
 .about-us-title{
@@ -501,11 +508,11 @@ details summary {
 }
 .about-us-contents{
     display: flex;
-    gap: 40px;
+    gap: 10px;
     justify-content: center;
     width: 100%;
     max-width: 1300px;
-    color: #444444;;
+    color: #444444;
     margin-top: 50px;
 }
 .about-us-content{
@@ -530,7 +537,7 @@ details summary {
     fill: #47b2e4;
 }
 .about-us-content-listitem div{
-    font-size: 15px;
+    font-size: 16px;
 }
 #about-us-content-right{
     display: flex;
@@ -572,22 +579,39 @@ details summary {
 .eum-contents{
     display: flex;
     flex-direction: row;
-    gap: 70px;
-    max-width: 1400px;
-    padding: 25px;
+    gap: 10px;
+    padding-bottom: 30px;
 }
-.eum-content{
-    padding: 15px 12px;
-}
+
 .eum-non-img{
     flex: 1;
-    min-width: 300px;
+    min-width: 40vw;
     margin-top: 30px;
+    padding: 15px 50px;
+    flex-shrink: 0;
+}
+.eum-img{
+    flex: 0.75;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+.eum-img img{
+    height: 65%;
+    width: auto;
+    object-fit: contain;
+    max-height: 450px;
+    max-width: 40vw;
+    display: block;
 }
 .eum-title{
     font-size: 2rem;
     line-height: 40px;
     color: #37517e;
+    margin-top: 20px;
+    padding: 10px;
 }
 .eum-title strong{
     font-weight: 600;
@@ -596,6 +620,7 @@ details summary {
     margin: 10px 0;
     color:  color-mix(in srgb, #444444, transparent 30%);
     line-height: 23px;
+    padding: 0 10px;
 }
 .eum-boxlist{
     display: grid;
@@ -604,21 +629,22 @@ details summary {
 .eum-boxitem{
     padding: 10px;
     background-color: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 .toggle-num{
     color: #47b2e4;
-    font-weight: 500;
+    font-weight: 600;
 }
 .eum-boxitem details summary{
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
-    padding: 10px;
+    padding: 15px 10px;
     cursor: pointer;
     box-sizing: border-box;
+    font-weight: 500;
 }
 .eum-boxitem details summary div{
     color: rgb(56, 85, 130);
@@ -651,22 +677,76 @@ details summary {
     line-height: 23px;
     margin: 0 12px 0 10px;
     color: #444444;
-}
-.eum-img{
-    flex: 0.7;
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
-    margin: 30px;
-    flex-shrink: 0;
-}
-.eum-img img{
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    max-height: 400px;
-    display: block;
+    font-weight: 300;
 }
 
-/*===== 반응형 구현 추가 =====*/
+/*========== 반응형 구현 추가 ==========*/
+
+@media (max-width: 991px){
+    .banner-grid{
+        grid-template-columns: 1fr;
+        width:90%;
+    }
+    .banner-right{
+        text-align: center;
+        order: 1;
+    }
+    .banner-left{
+        order: 2;
+    }
+    .banner-text-upper{
+        font-size: 5vw;
+        margin: 0;
+    }
+    .banner-text-lower{
+        font-size: 3.5vw;
+    }
+    .about-us{
+        padding: 50px 0;
+    }
+    .about-us-contents{
+        flex-direction: column;
+    }
+    .eum-contents {
+        flex-direction: column; 
+        margin: 10px 0;
+        padding-bottom: 0;
+        align-items: center; 
+        width: 100%;
+        min-width: none;
+    }
+    .eum-img{
+        order: 1;
+        margin-top: 50px;
+        flex: none;
+        width: 100%; 
+        max-width: none;
+        height: auto; 
+        display: flex;
+        min-width: 600px;
+    }
+    .eum-non-img{
+        order: 2;
+        padding: 0;
+        width: 90%;
+        flex: none;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .eum-img img{
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+@media (max-width: 767px) {
+    .banner{
+    background-color: #37517e;
+    padding: 120px 0 80px;
+    display: flex;
+    }
+    .banner-grid{
+        grid-template-columns: 1fr;
+        width:95%;
+    }    
+}
