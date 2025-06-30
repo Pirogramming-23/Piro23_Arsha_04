@@ -91,14 +91,13 @@ section {
 }
 
 .posts-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 416px);
   gap: 25px;
   justify-content: center;
 }
 
 .post-card {
-  width: 416px;
   height: 481.14px;
   background: #fff;
   overflow: hidden;
@@ -133,8 +132,9 @@ section {
   background-color: #47b2e4;
   color: #fff;
   font-size: 13px;
-  padding: 6px 10px;
-  font-weight: 500px;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-family: var(--default-font);
 }
 
 .post-content {
@@ -165,7 +165,7 @@ section {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: 15px;
   color: #ababab;
   margin-bottom: 10px;
   max-width: 80%;
@@ -192,7 +192,7 @@ section {
   display: block;
   width: 100%;
   height: 1px;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   margin: 20px 0;
   flex: 0 0 auto;
   margin-top: 10px;
@@ -200,14 +200,28 @@ section {
 }
 
 .read-more {
-  color: #929292;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;      
+  color: #8b8b8b;
+  font-weight: 510;
   font-size: 16px;
   margin-top: 5px;
   margin-bottom: 10px;
   line-height: 1.8;
   padding: 5px 0;
   font-family: var(--default-font);
+}
+
+.read-more:hover {
+  color: #47b2e4;
+}
+
+.read-more svg {
+   position: relative;
+  fill: currentColor;
+  transition: fill 0.3s;
+  top: 2px;
 }
 
 /* ===== Contact Section ===== */
@@ -299,10 +313,12 @@ section {
 
 .contact-icon-circle:hover {
   background-color: #47b2e4;
+  transition: background-color 0.3s ease;
 }
 
 .contact-icon-circle:hover svg {
   color: #fff;
+  transition: color 0.3s ease;
 }
 
 .contact-item h4 {
@@ -387,7 +403,7 @@ section {
 }
 
 .contact-form button:hover {
-  background-color: #63bde7;
+  background-color: #6fcef7;
 }
 
 /* Responsive */
@@ -453,7 +469,7 @@ section {
   padding: 0 20px;
   font-size: 16px;
   background-color: transparent;
-  color: #444;
+  color: #444444;
   outline: none;
   height: 100%;
   font-family: var(--default-font);
@@ -469,11 +485,11 @@ section {
   bottom: 0;
   right: 0;
   top: 0;
-  padding: 0 25px;
+  padding: 0 22px;
   height: 50px;
   background-color: #47b2e4;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   border: none;
   border-radius: 9999px;
@@ -487,7 +503,7 @@ section {
 }
 
 .newsletter-section button:hover {
-  background-color: #63bde7;
+  background-color: #6fcef7;
 }
 
 /*아래쪽 흰색*/
@@ -555,6 +571,7 @@ section {
 
 .footer-about p {
   margin-bottom: 0;
+  line-height: 1.8;
 }
 
 .footer-about p:first-of-type {
@@ -679,8 +696,7 @@ section {
 }
 
 .footer-credit-link:hover {
-    color: #9fe2ff;
-  
+    color: #95ddfc;
 }
 
 .footer-icon-circle {
