@@ -72,7 +72,6 @@
     width: 100%;
     height: 10px;
     background-color: #e9ecef;
-    border-radius: 5px;
 }
 
 .skill-item__progress {
@@ -206,9 +205,12 @@ body {
     margin-bottom: 30px;
 }
 
-.service-card__icon i {
+/* MODIFIED: i -> svg */
+.service-card__icon svg {
     color: #47b2e4;
-    font-size: 36px;
+    /* font-size is replaced by width/height attributes on SVG for better control */
+    width: 36px;
+    height: 36px;
     transition: 0.3s;
 }
 
@@ -232,7 +234,8 @@ body {
     margin-bottom: 0;
 }
 
-.service-card:hover .service-card__title a, .service-card:hover .service-card__icon i {
+/* MODIFIED: i -> svg */
+.service-card:hover .service-card__title a, .service-card:hover .service-card__icon svg {
     color: #209dd8;
 }
 
@@ -343,10 +346,14 @@ body {
     color: #333;
 }
 
-.checklist-item i {
+/* MODIFIED: i -> svg */
+.checklist-item svg {
     color: #47b2e4;
-    font-size: 18px;
+    /* font-size is replaced by width/height attributes */
+    width: 18px;
+    height: 18px;
     margin-right: 10px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 
