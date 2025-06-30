@@ -1,8 +1,18 @@
 @import "./reset.css";
 
+:root {
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Jost", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--default-font);
 }
 
 /* --- Skills Section 스타일 --- */
@@ -12,9 +22,8 @@
 }
 
 .skills-container {
-    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 60px;
     display: flex;
     align-items: center;
     flex-wrap: wrap; /* 모바일 화면에서 줄바꿈을 위함 */
@@ -35,11 +44,12 @@
 }
 
 .skills-content__title {
-    font-weight: 700;
+    font-weight: bold;
     font-size: 32px;
     color: #37517e;
     margin-top: 0;
     margin-bottom: 20px;
+    font-family: var(--heading-font);
 }
 
 .skills-content__description {
@@ -107,8 +117,7 @@ body {
 /* 컨테이너: 콘텐츠의 최대 너비를 정하고 중앙에 배치 */
 .container {
     width: 100%;
-    max-width: 1140px;
-    padding: 0 12px;
+    padding: 0 60px;
     margin: 0 auto;
 }
 
@@ -131,6 +140,7 @@ body {
     padding-bottom: 20px;
     position: relative;
     color: #37517e;
+    font-family: var(--heading-font);
 }
 
 /* 제목 아래 파란색 밑줄 */
@@ -177,8 +187,8 @@ body {
 /* col-item: 데스크톱에서 4개의 카드가 한 줄에 보이도록 너비 설정 */
 .services-section .col-item {
     position: relative;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 12px;
+    padding-left: 12px;
     box-sizing: border-box;
     margin-bottom: 30px;
     flex: 0 0 25%;
@@ -248,11 +258,10 @@ body {
 .process-layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* 카드 사이의 간격 */
+    gap: 24px; /* 카드 사이의 간격 */
     justify-content: center;
-    padding: 0 27px;
+    padding: 0 60px;
     margin: 0 auto;
-    max-width: 1140px;
 }
 
 /* --- 프로세스 카드 --- */
@@ -279,7 +288,7 @@ body {
 .process-card__image-wrapper {
     width: 100%;
     position: relative;
-    background-color: #eef7ff;
+    background-color: #ffffff;
     overflow: hidden;
     height: 280px;
 }
@@ -324,6 +333,7 @@ body {
     font-weight: 700;
     color: #37517e;
     margin: 0 0 15px 0;
+    font-family: var(--heading-font);
 }
 
 .process-card__description {
@@ -413,6 +423,7 @@ body {
     font-size: 28px;
     font-weight: 700;
     margin: 0 0 8px 0;
+    font-family: var(--heading-font);
 }
 
 .cta-content__description {
@@ -439,6 +450,7 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     white-space: nowrap; /* 버튼 텍스트가 줄바꿈되지 않도록 함 */
+    font-family: var(--heading-font);
 }
 
 .cta-button:hover {
