@@ -442,30 +442,30 @@ details summary {
 }
 
 @keyframes scrollPause {
-  0%      { transform: translateX(0); }
-  0.5%    { transform: translateX(-250px); }
-  12.5%   { transform: translateX(-250px); }
+  0%      { transform: translateX(-50px); }
+  0.5%    { transform: translateX(-300px); }
+  12.5%   { transform: translateX(-300px); }
 
-  13%     { transform: translateX(-500px); }
-  25%     { transform: translateX(-500px); }
+  13%     { transform: translateX(-550px); }
+  25%     { transform: translateX(-550px); }
 
-  25.5%   { transform: translateX(-750px); }
-  37.5%   { transform: translateX(-750px); }
+  25.5%   { transform: translateX(-800px); }
+  37.5%   { transform: translateX(-800px); }
 
-  38%     { transform: translateX(-1000px); }
-  50%     { transform: translateX(-1000px); }
+  38%     { transform: translateX(-1050px); }
+  50%     { transform: translateX(-1050px); }
 
-  50.5%   { transform: translateX(-1250px); }
-  62.5%   { transform: translateX(-1250px); }
+  50.5%   { transform: translateX(-1300px); }
+  62.5%   { transform: translateX(-1300px); }
 
-  63%     { transform: translateX(-1500px); }
-  75%     { transform: translateX(-1500px); }
+  63%     { transform: translateX(-1550px); }
+  75%     { transform: translateX(-1550px); }
 
-  75.5%   { transform: translateX(-1750px); }
-  87.5%   { transform: translateX(-1750px); }
+  75.5%   { transform: translateX(-1800px); }
+  87.5%   { transform: translateX(-1800px); }
 
-  88%     { transform: translateX(-2000px); }
-  100%    { transform: translateX(-2000px); }
+  88%     { transform: translateX(-2050px); }
+  100%    { transform: translateX(-2050px); }
 }
 
 /*about us 부분*/
