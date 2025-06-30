@@ -4,44 +4,13 @@
 /* //////////////////////////////////// */
 /* 공통 */
 
-body {
+:root{
     color: var(--default-color);
     background-color: var(--background-color);
     font-family: var(--default-font);
 }
 
-*, ::after, ::before {
-    box-sizing: border-box;
-}
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    font-family: var(--heading-font);
-}
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--bs-heading-color);
-}
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    font-family: var(--heading-font);
-    
-}
-
-
-
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
 
 
 
@@ -77,6 +46,8 @@ h2 {
 
 
 .Portfolio-container h2 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -193,7 +164,7 @@ input[type="radio"][name="filter"] {
 .filter-buttons label {
     display: inline-block;
     padding: 10px 20px;
-    background: #f0f0f0;
+    background: var(--background-color);
     border-radius: 20px;
     margin: 5px;
     cursor: pointer;
@@ -201,15 +172,23 @@ input[type="radio"][name="filter"] {
 }
 
 .filter-buttons input:checked + label {
-    background: #3498db;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+
+}
+
+.filter-buttons label:hover{
+  color: var(--background-color);
+  background-color: var(--accent-color);
 }
 
 /* ===== 이미지 그리드 ===== */
 .portfolio-gallery {
     column-count: 3;        /* 열 개수 */
     column-gap: 20px;       /* 열 사이 간격 */
-    padding: 12px;
+    padding: 0 100px;
+    margin: auto;
+    text-align: center;
     
 }
 
@@ -375,14 +354,7 @@ input[type="radio"][name="filter"] {
 
 
 /* ////////////////////////////////////////////////////////// team*/
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fc;
-    color: #333;
-    text-align: center;
-  }
+
   
   .team-section {
     padding: 50px 20px;
@@ -390,6 +362,8 @@ body {
   }
   
   .team-section h1 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
     font-size: 36px;
     font-weight: bold;
     color: #34495e;
@@ -431,16 +405,16 @@ color-mix(in srgb, var(--default-color), transparent 60%);
   
   /* Flexbox 기반 레이아웃 */
   .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2열 */
+    column-gap: 30px ;
+    row-gap: 100px;
     max-width: 1200px;
     margin: 0 auto;
   }
   
   .team-card {
-    background-color: #fff;
+    background-color: var(--surface-color);
     border-radius: 5px;
     padding: 30px;
     text-align: left;
@@ -448,12 +422,10 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     display: flex;
     gap: 20px;
     align-items: center;
-    width: calc(50% - 15px); /* 2열 */
-  
-    background-color: var(--surface-color);
     position: relative;
     transition: 0.5s;
-    height: 100%;
+    height: 100%; /* 카드 높이 맞추기용 */
+ 
   }
   
   .team-card:hover {
@@ -554,9 +526,9 @@ color-mix(in srgb, var(--default-color), transparent 60%);
 
 
 /* 전체 섹션 배경 및 텍스트 기본값 */
-body {
+.pricing-body {
     margin: 0;
-    padding: 0;
+    padding: 60px 0;
     font-family: Arial, sans-serif;
     background-color: #f8f9fc;
     color: #333;
@@ -637,10 +609,7 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .pricing-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-  }
+  
   
   .pricing-item h3 {
     color: #34495e;
