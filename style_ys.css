@@ -25,9 +25,8 @@
 .Portfolio-container {
   display: block!important;
   width: 100%!important;
-  background-color: var(--background-color) !important;
-  max-width: 1140px!important;
-  padding: 0 15px!important;
+  background-color: white;
+  padding: 0 80px 10px!important;
   margin: 0 auto!important;
   
 }
@@ -225,7 +224,7 @@
   .team-section {
     padding: 50px 20px;
     text-align: center;
-    background-color: var(--background-color);
+    background-color: white;
   }
   
   .team-section h1 {
@@ -452,7 +451,9 @@ color-mix(in srgb, var(--default-color), transparent 60%);
     
 
   }
-  
+  #pricing {
+    background-color: white;
+  }
   .pricing-section-title h2::after {
     content: "";
     position: absolute;
@@ -614,7 +615,6 @@ color-mix(in srgb, var(--default-color), transparent 30%);
 
 
 :root {
-    --background-color: #ffffff;
     --default-color: #444444;
     --heading-color: #37517e;
     --accent-color: #47b2e4;
