@@ -128,22 +128,6 @@ details summary {
     orientation: block;
     scroll-offsets: 500px, 600px;
 }
-.header-lower {
-    position: sticky;
-    top: 32px;
-    left: 0;
-    right: 0;
-    color: #FFFFFF;
-    background-color: rgba(40, 58, 90, 0);
-    transition: background-color 0.3s ease;
-    z-index: 999;
-    padding-top: 17px;
-    animation-name: scroll-bg-change;
-    animation-duration: auto;
-    animation-timing-function: ease;
-    animation-timeline: headerScroll;
-    animation-fill-mode: both;
-}
 @keyframes scroll-bg-change{
     from{
         background-color: rgba(40, 58, 90, 0);
@@ -152,6 +136,26 @@ details summary {
         background-color: rgba(40, 58, 90, 0.9);
     }
 }*/
+.header-lower {
+    position: sticky;
+    top: 32px;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    background-color: rgba(40, 58, 90, 0.9);
+    /*
+    transition: background-color 0.3s ease;
+    */
+    z-index: 999;
+    padding-top: 17px;
+    /*
+    animation-name: scroll-bg-change;
+    animation-duration: auto;
+    animation-timing-function: ease;
+    animation-timeline: headerScroll;
+    animation-fill-mode: both;
+    */
+}
 
 .header-lower-inner {
     position: sticky;
@@ -669,4 +673,4 @@ details summary {
     display: block;
 }
 
-/*===== 반응형 구현 추가 =====*/
+/*========== 반응형 구현 추가 ==========*/
