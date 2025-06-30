@@ -146,11 +146,11 @@ details summary {
     right: 0;
     color: #FFFFFF;
     background-color: rgba(40, 58, 90, 0.9);
+    z-index: 999;
+    padding-top: 17px;
     /*
     transition: background-color 0.3s ease;
     */
-    z-index: 999;
-    padding-top: 17px;
     /*
     animation-name: scroll-bg-change;
     animation-duration: auto;
@@ -579,22 +579,37 @@ details summary {
 .eum-contents{
     display: flex;
     flex-direction: row;
-    gap: 70px;
-    max-width: 1400px;
-    padding: 25px;
+    gap: 30px;
 }
-.eum-content{
-    padding: 15px 12px;
-}
+
 .eum-non-img{
     flex: 1;
     min-width: 300px;
     margin-top: 30px;
+    padding: 15px 50px;
+}
+.eum-img{
+    flex: 0.75;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-content: center;
+    justify-items: center;
+}
+.eum-img img{
+    height: 65%;
+    width: auto;
+    object-fit: contain;
+    max-height: 450px;
+    display: block;
 }
 .eum-title{
     font-size: 2rem;
     line-height: 40px;
     color: #37517e;
+    margin-top: 20px;
+    padding: 10px;
 }
 .eum-title strong{
     font-weight: 600;
@@ -603,6 +618,7 @@ details summary {
     margin: 10px 0;
     color:  color-mix(in srgb, #444444, transparent 30%);
     line-height: 23px;
+    padding: 0 10px;
 }
 .eum-boxlist{
     display: grid;
@@ -611,21 +627,22 @@ details summary {
 .eum-boxitem{
     padding: 10px;
     background-color: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 .toggle-num{
     color: #47b2e4;
-    font-weight: 500;
+    font-weight: 600;
 }
 .eum-boxitem details summary{
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
-    padding: 10px;
+    padding: 15px 10px;
     cursor: pointer;
     box-sizing: border-box;
+    font-weight: 500;
 }
 .eum-boxitem details summary div{
     color: rgb(56, 85, 130);
@@ -658,22 +675,7 @@ details summary {
     line-height: 23px;
     margin: 0 12px 0 10px;
     color: #444444;
-}
-.eum-img{
-    flex: 0.7;
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
-    margin: 30px;
-    flex-shrink: 0;
-}
-.eum-img img{
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    max-height: 400px;
-    display: block;
+    font-weight: 300;
 }
 
 /*========== 반응형 구현 추가 ==========*/
