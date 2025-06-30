@@ -115,13 +115,13 @@ body {
 }
 
 /* 컨테이너: 콘텐츠의 최대 너비를 정하고 중앙에 배치 */
-.container {
+.container-lsy {
     width: 100%;
     padding: 0 60px;
     margin: 0 auto;
 }
 
-.container > .row {
+.container-lsy > .row {
     margin: auto;
 }
 /* 섹션 제목 */
