@@ -1,0 +1,278 @@
+!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Portfolio with Absolute Positioning</title>
+    <style>
+        :root {
+            --background-color: #f3f5fa;
+            --surface-color: #ffffff;
+            --default-color: #444444;
+            --heading-color: #37517e;
+            --accent-color: #47b2e4;
+            --contrast-color: #ffffff;
+            --default-font: "Open Sans", system-ui, sans-serif;
+            --heading-font: "Jost", sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--default-font);
+            color: var(--default-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 60px 0 30px 0;
+        }
+
+        .section-title__heading {
+            font-family: var(--heading-font);
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title__heading::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 120px;
+            height: 1px;
+            background: #ddd;
+            bottom: 1px;
+            left: calc(50% - 60px);
+        }
+
+        .section-title__heading::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: calc(50% - 20px);
+        }
+
+        .filter-input {
+            display: none;
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-label {
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            color: var(--heading-color);
+            background-color: var(--surface-color);
+        }
+
+        .filter-label:hover {
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+        }
+
+        #filter-all:checked ~ .filter-controls .filter-label[for="filter-all"],
+        #filter-app:checked ~ .filter-controls .filter-label[for="filter-app"],
+        #filter-card:checked ~ .filter-controls .filter-label[for="filter-card"],
+        #filter-web:checked ~ .filter-controls .filter-label[for="filter-web"] {
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+        }
+
+        /* --- 포트폴리오 갤러리 --- */
+        .portfolio-gallery-wrapper {
+            position: relative;
+            /* 높이는 아이템 개수와 크기에 따라 수동으로 조절해야 합니다. */
+            height: 650px; 
+            transition: height 0.5s ease-in-out;
+        }
+
+        .portfolio-item {
+            position: absolute;
+            width: calc(33.333% - 16px); /* 24px 갭 고려 */
+            transition: top 0.5s ease, left 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- 초기 위치 설정 (All 상태) --- */
+        .portfolio-item.app-1-1  { top: 0;   left: 0; }
+        .portfolio-item.card-1-3  { top: 0;   left: calc(33.333% + 8px); }
+        .portfolio-item.web-3-7 { top: 0;   left: calc(66.666% + 16px); }
+        .portfolio-item.web-1-2  { top: 500px; left: 0; }
+        .portfolio-item.app-2-4  { top: 260px; left: calc(33.333% + 8px); }
+        .portfolio-item.card-2-8 { top: 260px; left: calc(66.666% + 16px); }
+        .portfolio-item.app-3-5  { top: 520px; left: calc(33.333% + 8px); }
+        .portfolio-item.card-3-9 { top: 760px; left: calc(66.666% + 16px); }
+        .portfolio-item.web-2-6  { top: 780px; left: calc(33.333% + 8px); }
+
+        /* --- 필터링 로직 --- */
+
+        /* 기본적으로 필터링 되면 숨김 */
+        #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item:not(.app),
+        #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item:not(.card),
+        #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item:not(.web) {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+            /* 화면 밖으로 밀어내서 깜빡임 방지 */
+        }
+
+        /* [App] 필터 선택 시 */
+        #filter-app:checked ~ .portfolio-gallery-wrapper { height: 320px; } /* 컨테이너 높이 조절 */
+        #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-1-1 { top: 0; left: 0; }
+        #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-2-4 { top: 0; left: calc(33.333% + 8px); }
+        #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-3-5 { top: 0; left: calc(66.666% + 16px); }
+
+        /* [Card] 필터 선택 시 */
+        #filter-card:checked ~ .portfolio-gallery-wrapper { height: 320px; }
+        #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-1-3 { top: 0; left: 0; }
+        #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-2-8 { top: 0; left: calc(33.333% + 8px); }
+        #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-3-9 { top: 0;   left: calc(66.666% + 16px); }
+
+        /* [Web] 필터 선택 시 */
+        #filter-web:checked ~ .portfolio-gallery-wrapper { height: 320px; }
+        #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-3-7 { top: 0; left: 0; }
+        #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-1-2 { top: 0; left: calc(33.333% + 8px); }
+        #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-2-6 { top: 0;   left: calc(66.666% + 16px); }
+        
+        @media (max-width: 991px) {
+            .portfolio-item { width: calc(50% - 12px); }
+            .portfolio-gallery-wrapper { height: 1000px; }
+            /* All */
+            .portfolio-item.app-1  { top: 0;   left: 0; }
+            .portfolio-item.web-1  { top: 0;   left: calc(50% + 12px); }
+            .portfolio-item.card-1 { top: 320px; left: 0; }
+            .portfolio-item.app-2  { top: 320px; left: calc(50% + 12px); }
+            .portfolio-item.web-2  { top: 640px; left: 0; }
+            .portfolio-item.card-2 { top: 640px; left: calc(50% + 12px); }
+            /* App */
+            #filter-app:checked ~ .portfolio-gallery-wrapper { height: 320px; }
+            #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-1 { top: 0; left: 0; }
+            #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-2 { top: 0; left: calc(50% + 12px); }
+            /* Card */
+            #filter-card:checked ~ .portfolio-gallery-wrapper { height: 320px; }
+            #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-1 { top: 0; left: 0; }
+            #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-2 { top: 0; left: calc(50% + 12px); }
+            /* Web */
+            #filter-web:checked ~ .portfolio-gallery-wrapper { height: 320px; }
+            #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-1 { top: 0; left: 0; }
+            #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-2 { top: 0; left: calc(50% + 12px); }
+        }
+
+        @media (max-width: 767px) {
+            .portfolio-item { width: 100%; }
+            .portfolio-gallery-wrapper { height: 2000px; }
+             /* All */
+            .portfolio-item.app-1  { top: 0;   left: 0; }
+            .portfolio-item.web-1  { top: 320px;   left: 0; }
+            .portfolio-item.card-1 { top: 640px; left: 0; }
+            .portfolio-item.app-2  { top: 960px; left: 0; }
+            .portfolio-item.web-2  { top: 1280px; left: 0; }
+            .portfolio-item.card-2 { top: 1600px; left: 0; }
+            /* App */
+            #filter-app:checked ~ .portfolio-gallery-wrapper { height: 640px; }
+            #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-1 { top: 0; left: 0; }
+            #filter-app:checked ~ .portfolio-gallery-wrapper .portfolio-item.app-2 { top: 320px; left: 0; }
+            /* Card */
+            #filter-card:checked ~ .portfolio-gallery-wrapper { height: 640px; }
+            #filter-card:checked ~ .portfolio-galler-wrapper .portfolio-item.card-1 { top: 0; left: 0; }
+            #filter-card:checked ~ .portfolio-gallery-wrapper .portfolio-item.card-2 { top: 320px; left: 0; }
+            /* Web */
+            #filter-web:checked ~ .portfolio-gallery-wrapper { height: 640px; }
+            #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-1 { top: 0; left: 0; }
+            #filter-web:checked ~ .portfolio-gallery-wrapper .portfolio-item.web-2 { top: 320px; left: 0; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-title">
+            <h2 class="section-title__heading">Portfolio</h2>
+        </div>
+
+        <!-- 필터링을 위한 숨겨진 라디오 입력 -->
+        <input type="radio" name="filter" id="filter-all" class="filter-input" checked>
+        <input type="radio" name="filter" id="filter-app" class="filter-input">
+        <input type="radio" name="filter" id="filter-card" class="filter-input">
+        <input type="radio" name="filter" id="filter-web" class="filter-input">
+
+        <!-- 보이는 필터 버튼 (라벨) -->
+        <div class="filter-controls">
+            <label for="filter-all" class="filter-label">All</label>
+            <label for="filter-app" class="filter-label">App</label>
+            <label for="filter-card" class="filter-label">Card</label>
+            <label for="filter-web" class="filter-label">Web</label>
+        </div>
+
+        <div class="portfolio-gallery-wrapper">
+            <div class="portfolio-item app app-1-1">
+                <div class="portfolio-card"><img src="./img/portfolio-app1.webp" alt="App 1(1)"></div>
+            </div>
+            <div class="portfolio-item web web-1-2">
+                <div class="portfolio-card"><img src="./img/portfolio-web2.webp" alt="Web 1(2)"></div>
+            </div>
+            <div class="portfolio-item card card-1-3">
+                <div class="portfolio-card"><img src="./img/portfolio-card1.webp" alt="Card 1(3)"></div>
+            </div>
+            <div class="portfolio-item app app-2-4">
+                <div class="portfolio-card"><img src="./img/portfolio-app2.webp" alt="App 2(4)"></div>
+            </div>
+            <div class="portfolio-item web web-2-6">
+                <div class="portfolio-card"><img src="./img/portfolio-web3.webp" alt="Web 2(6)"></div>
+            </div>
+            <div class="portfolio-item card card-2-8">
+                <div class="portfolio-card"><img src="./img/portfolio-card2.webp" alt="Card 2(8)"></div>
+            </div>
+            <div class="portfolio-item app app-3-5">
+                <div class="portfolio-card"><img src="./img/portfolio-app3.webp" alt="App 3(5)"></div>
+            </div>
+            <div class="portfolio-item web web-3-7">
+                <div class="portfolio-card"><img src="./img/portfolio-web1.webp" alt="Web 3(7)"></div>
+            </div>
+            <div class="portfolio-item card card-3-9">
+                <div class="portfolio-card"><img src="./img/portfolio-card3.webp" alt="Card 3(9)"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
