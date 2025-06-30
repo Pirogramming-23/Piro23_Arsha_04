@@ -622,63 +622,67 @@ details summary {
     line-height: 23px;
     padding: 0 10px;
 }
-.eum-boxlist{
-    display: grid;
-    gap: 20px;
-}
-.eum-boxitem{
+
+.eum-boxitem {
     padding: 10px;
     background-color: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: relative;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
 }
-.toggle-num{
-    color: #47b2e4;
-    font-weight: 600;
-}
-.eum-boxitem details summary{
+.summary-label {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 10px;
+    padding: 15px;
     cursor: pointer;
-    box-sizing: border-box;
-    font-weight: 500;
 }
-.eum-boxitem details summary div{
-    color: rgb(56, 85, 130);
-    flex: 1;
-
+.summary-label > div{
+    color: #37517e;
 }
-.eum-boxitem details summary svg{
-    right: 0;
-    margin-left: auto;
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    fill: rgb(56, 85, 130);
-    transition: transform 0.5s ease;
-}
-.eum-boxitem details[open] summary svg{
-    transform: rotate(90deg);
-    fill: #47b2e4;
-}
-.eum-boxitem details[open] summary div {
+.summary-label:hover > div{
     color: #47b2e4;
 }
-.eum-boxitem details summary div:hover{
+.toggle-num {
+    font-weight: bold;
+    margin-right: 10px;
     color: #47b2e4;
 }
-.eum-boxitem details summary svg:hover{
+.summary-label svg {
+    transition: transform 0.3s ease;
+    color: #37517e;
+}
+.summary-label svg:hover{
     fill: #47b2e4;
 }
-.eum-boxitem details > div{
+input[type="checkbox"]:checked + .summary-label > div {
+    color: #47b2e4;
+}
+.summary-label svg:hover > .summary-label div{
+    color: #37517e;
+}
+.summary-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    padding: 0 15px;
     line-height: 23px;
     margin: 0 12px 0 10px;
     color: #444444;
     font-weight: 300;
 }
+input[type="checkbox"]:checked + .summary-label + .summary-answer {
+    max-height: 500px;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+}
+input[type="checkbox"]:checked + .summary-label svg {
+    transform: rotate(90deg); 
+    fill: #007bff;
+}
+
 
 /*========== 반응형 구현 추가 ==========*/
 
